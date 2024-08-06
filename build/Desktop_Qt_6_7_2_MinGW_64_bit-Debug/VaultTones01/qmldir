@@ -1,0 +1,5 @@
+module VaultTones01
+typeinfo appVaultTones01.qmltypes
+prefer :/VaultTones01/
+Main 1.0 Main.qml
+

@@ -1,0 +1,14 @@
+-rootPath
+C:/Qt/6.7.2/VaultTones01
+-cmake-output
+-output-file
+C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/qml_imports/appVaultTones01_conf.cmake
+-importPath
+C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/VaultTones01
+-importPath
+C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug
+-importPath
+C:/Qt/6.7.2/mingw_64/./qml
+-qrcFiles
+C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/qmake_VaultTones01.qrc
+C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/appVaultTones01_raw_qml_0.qrc
