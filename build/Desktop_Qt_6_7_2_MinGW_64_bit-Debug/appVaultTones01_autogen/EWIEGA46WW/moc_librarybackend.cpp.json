@@ -1,0 +1,44 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                }
+            ],
+            "className": "LibraryBackend",
+            "object": true,
+            "qualifiedClassName": "LibraryBackend",
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "SongName",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "SongFile",
+                            "type": "QUrl"
+                        },
+                        {
+                            "name": "SongPhoto",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "name": "addSongs",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "librarybackend.h",
+    "outputRevision": 68
+}

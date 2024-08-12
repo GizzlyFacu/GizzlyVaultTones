@@ -3,3 +3,6 @@ C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/qmake
 --resource
 C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/appVaultTones01_raw_qml_0.qrc
 /VaultTones01/Main.qml
+/VaultTones01/LibraryA.qml
+/VaultTones01/DelegateAlbun.qml
+/VaultTones01/Pallete.qml

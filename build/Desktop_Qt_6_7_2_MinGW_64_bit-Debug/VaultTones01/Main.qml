@@ -1,8 +1,22 @@
 import QtQuick
+import Qt5Compat.GraphicalEffects
 
 Window {
-    width: 640
-    height: 480
+    id:root
+    width: 896
+    height: 504
     visible: true
+    color: "black"
     title: qsTr("Hello World")
+
+    LibraryA{
+        id: base
+        anchors.centerIn: parent
+    }
+    DelegateAlbun{
+        id:sas
+        x:700
+        y:50
+    }
+
 }
