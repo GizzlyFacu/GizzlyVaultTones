@@ -1,9 +1,9 @@
 <RCC>
   <qresource prefix="/VaultTones01/">
     <file alias="Main.qml">C:/Qt/6.7.2/VaultTones01/Main.qml</file>
-    <file alias="LibraryA.qml">C:/Qt/6.7.2/VaultTones01/LibraryA.qml</file>
-    <file alias="DelegateAlbun.qml">C:/Qt/6.7.2/VaultTones01/DelegateAlbun.qml</file>
-    <file alias="Pallete.qml">C:/Qt/6.7.2/VaultTones01/Pallete.qml</file>
+    <file alias="QML/Library/LibraryA.qml">C:/Qt/6.7.2/VaultTones01/QML/Library/LibraryA.qml</file>
+    <file alias="QML/Library/DelegateAlbun.qml">C:/Qt/6.7.2/VaultTones01/QML/Library/DelegateAlbun.qml</file>
+    <file alias="QML/Utilities/Pallete.qml">C:/Qt/6.7.2/VaultTones01/QML/Utilities/Pallete.qml</file>
     <file alias="Tasks.md">C:/Qt/6.7.2/VaultTones01/Tasks.md</file>
   </qresource>
 </RCC>

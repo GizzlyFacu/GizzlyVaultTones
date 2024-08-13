@@ -19,9 +19,9 @@ qt_add_qml_module(appVaultTones01
     VERSION 1.0
     QML_FILES
         Main.qml
-        QML_FILES LibraryA.qml
-        QML_FILES DelegateAlbun.qml
-        QML_FILES Pallete.qml
+        QML_FILES QML/Library/LibraryA.qml
+        QML_FILES QML/Library/DelegateAlbun.qml
+        QML_FILES QML/Utilities/Pallete.qml
         SOURCES librarybackend.h librarybackend.cpp
         RESOURCES Tasks.md
 )
@@ -36,6 +36,10 @@ set_target_properties(appVaultTones01 PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
+target_include_directories(appVaultTones01 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/QML)
+target_include_directories(appVaultTones01 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/QML/Library)
+target_include_directories(appVaultTones01 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/QML/Utilities)
+
 
 target_link_libraries(appVaultTones01
     PRIVATE Qt6::Quick Qt6::Core5Compat

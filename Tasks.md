@@ -16,6 +16,12 @@ void clearDataList() {
 }
 ```
 ## Second Level
-2.Completed - Learn how to use a bar with the library.
-(Scroll View) - (Slider) 
-3.Completed - I need to add a mask to an Image in Delegate, for a border image.
+2. Completed - Learn how to use a bar with the library. (Scroll View) - (Slider). 
+3. Completed - I need to add a mask to an Image in Delegate, for a border image.
+4. Completed - Move the code of the RoundedImage to a separate file .qml.
+5. Completed - Add a OnMouseHover and OnSelected effect over the RoundedImage.
+6. Start the blueprint of Search Bar.
+7. Obsidian: Documentate everything so far.
+
+## Third Level
+1. Add function to onClicked() delegates

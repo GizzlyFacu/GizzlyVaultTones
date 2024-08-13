@@ -1,5 +1,6 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
+import VaultTones01
 
 Window {
     id:root

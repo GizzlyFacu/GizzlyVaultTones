@@ -9,6 +9,7 @@ Item {
     height: 143
 
     Item{
+        //roundedImage: la verdadera imagen es OpacityMask, los otros dos son mascaras
         id:itemAlbum
         width: 100
         height: itemAlbum.width
