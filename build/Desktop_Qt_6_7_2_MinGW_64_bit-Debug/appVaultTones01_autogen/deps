@@ -9,6 +9,7 @@ appVaultTones01_autogen/timestamp: \
 	C:/Qt/6.7.2/VaultTones01/librarybackend.cpp \
 	C:/Qt/6.7.2/VaultTones01/librarybackend.h \
 	C:/Qt/6.7.2/VaultTones01/main.cpp \
+	C:/Qt/6.7.2/VaultTones01/sources.qrc \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QAbstractListModel \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \

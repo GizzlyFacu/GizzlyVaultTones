@@ -1,8 +1,8 @@
 # Tasks
 ---
 ## Where did I Stop
-- I was customizing the ScrollBar in LibraryA, then I wanted to connect the data of
-librarybackend to delegateAlbun.
+- I was about to make the Delegates for the SearchBar, taking the info from librarybackend 
+- [SearchModelVid](https://academy.qt.io/users/sign_in?next=%2Fmy-learning)
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp
 2. Think about if it's better to integrate the song Local o Remote.
@@ -22,6 +22,14 @@ void clearDataList() {
 5. Completed - Add a OnMouseHover and OnSelected effect over the RoundedImage.
 6. Start the blueprint of Search Bar.
 7. Obsidian: Documentate everything so far.
+
+## Second Level: SearchBar 
+1. Make the delegates of Search Bar.
+2. Search Bar: Make the functions of:
+    - Search button
+    - Plus button
+    - Filter button
+
 
 ## Third Level
 1. Add function to onClicked() delegates

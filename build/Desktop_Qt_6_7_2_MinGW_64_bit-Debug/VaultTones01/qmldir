@@ -5,4 +5,6 @@ Main 1.0 Main.qml
 LibraryA 1.0 QML/Library/LibraryA.qml
 DelegateAlbun 1.0 QML/Library/DelegateAlbun.qml
 Pallete 1.0 QML/Utilities/Pallete.qml
+SearchBar 1.0 QML/Library/SearchBar.qml
+IconColor 1.0 QML/Library/IconColor.qml
 

@@ -2975,6 +2975,9 @@
 		{
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/qml_imports/appVaultTones01_conf.cmake"
+		},
+		{
+			"path" : "sources.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",

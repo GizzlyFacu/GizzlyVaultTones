@@ -11,5 +11,7 @@ C:/Qt/6.7.2/VaultTones01/Main.qml
 C:/Qt/6.7.2/VaultTones01/QML/Library/LibraryA.qml
 C:/Qt/6.7.2/VaultTones01/QML/Library/DelegateAlbun.qml
 C:/Qt/6.7.2/VaultTones01/QML/Utilities/Pallete.qml
+C:/Qt/6.7.2/VaultTones01/QML/Library/SearchBar.qml
+C:/Qt/6.7.2/VaultTones01/QML/Library/IconColor.qml
 --json
 C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/appVaultTones01_qmllint.json

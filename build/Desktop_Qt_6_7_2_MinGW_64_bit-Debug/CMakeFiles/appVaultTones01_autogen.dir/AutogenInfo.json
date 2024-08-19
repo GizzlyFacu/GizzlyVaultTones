@@ -713,7 +713,8 @@
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
-		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/qml_imports/appVaultTones01_conf.cmake"
+		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/qml_imports/appVaultTones01_conf.cmake",
+		"C:/Qt/6.7.2/VaultTones01/sources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Qt/6.7.2/VaultTones01",
 	"CROSS_CONFIG" : false,
@@ -817,7 +818,9 @@
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_VaultTones01.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_Main_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/DelegateAlbun_qml.cpp",
+		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/IconColor_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/LibraryA_qml.cpp",
+		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/SearchBar_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Utilities/Pallete_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_qmlcache_loader.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/appvaulttones01_qmltyperegistrations.cpp"
@@ -843,7 +846,9 @@
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_VaultTones01.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_Main_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/DelegateAlbun_qml.cpp",
+		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/IconColor_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/LibraryA_qml.cpp",
+		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/SearchBar_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Utilities/Pallete_qml.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_qmlcache_loader.cpp",
 		"C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/appvaulttones01_qmltyperegistrations.cpp"

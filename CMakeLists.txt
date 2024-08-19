@@ -24,6 +24,9 @@ qt_add_qml_module(appVaultTones01
         QML_FILES QML/Utilities/Pallete.qml
         SOURCES librarybackend.h librarybackend.cpp
         RESOURCES Tasks.md
+        QML_FILES QML/Library/SearchBar.qml
+        RESOURCES sources.qrc
+        QML_FILES QML/Library/IconColor.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
