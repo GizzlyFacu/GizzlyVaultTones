@@ -76,21 +76,23 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8,
 				9,
 				10,
 				11,
 				12,
 				13,
 				14,
-				15
+				15,
+				16,
+				17
 			]
 		}
 	],
@@ -130,6 +132,12 @@
 			"backtrace" : 5,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/VaultTones01/QML/Library/IconColor.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/VaultTones01/QML/Library/DelegateSearchBar.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -178,6 +186,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/VaultTones01/QML/Library/IconColor.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/VaultTones01/QML/Library/DelegateSearchBar.qml.rule",
 			"sourceGroupIndex" : 1
 		},
 		{

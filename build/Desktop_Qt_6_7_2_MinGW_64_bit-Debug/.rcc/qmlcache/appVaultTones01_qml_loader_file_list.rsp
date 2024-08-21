@@ -8,3 +8,5 @@ C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/appVa
 /VaultTones01/QML/Utilities/Pallete.qml
 /VaultTones01/QML/Library/SearchBar.qml
 /VaultTones01/QML/Library/IconColor.qml
+/VaultTones01/QML/Library/DelegateSearchBar.qml
+/VaultTones01/QML/Library/MiniDelegatesSearchBar.qml

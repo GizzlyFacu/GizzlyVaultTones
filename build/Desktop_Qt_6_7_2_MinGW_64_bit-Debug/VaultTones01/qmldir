@@ -7,4 +7,6 @@ DelegateAlbun 1.0 QML/Library/DelegateAlbun.qml
 Pallete 1.0 QML/Utilities/Pallete.qml
 SearchBar 1.0 QML/Library/SearchBar.qml
 IconColor 1.0 QML/Library/IconColor.qml
+DelegateSearchBar 1.0 QML/Library/DelegateSearchBar.qml
+MiniDelegatesSearchBar 1.0 QML/Library/MiniDelegatesSearchBar.qml
 

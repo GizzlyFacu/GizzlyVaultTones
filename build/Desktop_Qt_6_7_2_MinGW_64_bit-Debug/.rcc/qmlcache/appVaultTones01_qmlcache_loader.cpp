@@ -47,6 +47,20 @@ namespace _0x5f_VaultTones01_QML_Library_IconColor_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _0x5f_VaultTones01_QML_Library_DelegateSearchBar_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _0x5f_VaultTones01_QML_Library_MiniDelegatesSearchBar_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -67,6 +81,8 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/VaultTones01/QML/Utilities/Pallete.qml"), &QmlCacheGeneratedCode::_0x5f_VaultTones01_QML_Utilities_Pallete_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/VaultTones01/QML/Library/SearchBar.qml"), &QmlCacheGeneratedCode::_0x5f_VaultTones01_QML_Library_SearchBar_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/VaultTones01/QML/Library/IconColor.qml"), &QmlCacheGeneratedCode::_0x5f_VaultTones01_QML_Library_IconColor_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/VaultTones01/QML/Library/DelegateSearchBar.qml"), &QmlCacheGeneratedCode::_0x5f_VaultTones01_QML_Library_DelegateSearchBar_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/VaultTones01/QML/Library/MiniDelegatesSearchBar.qml"), &QmlCacheGeneratedCode::_0x5f_VaultTones01_QML_Library_MiniDelegatesSearchBar_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

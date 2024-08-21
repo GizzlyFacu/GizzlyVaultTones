@@ -14,10 +14,10 @@ Window {
         id: base
         anchors.centerIn: parent
     }
-    DelegateAlbun{
-        id:sas
-        x:700
-        y:50
+    DelegateSearchBar{
+        id:asss
+        x:205
+        y:105
     }
 
 }

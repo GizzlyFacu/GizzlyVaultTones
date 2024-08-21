@@ -6,6 +6,8 @@
     <file alias="QML/Utilities/Pallete.qml">C:/Qt/6.7.2/VaultTones01/QML/Utilities/Pallete.qml</file>
     <file alias="QML/Library/SearchBar.qml">C:/Qt/6.7.2/VaultTones01/QML/Library/SearchBar.qml</file>
     <file alias="QML/Library/IconColor.qml">C:/Qt/6.7.2/VaultTones01/QML/Library/IconColor.qml</file>
+    <file alias="QML/Library/DelegateSearchBar.qml">C:/Qt/6.7.2/VaultTones01/QML/Library/DelegateSearchBar.qml</file>
+    <file alias="QML/Library/MiniDelegatesSearchBar.qml">C:/Qt/6.7.2/VaultTones01/QML/Library/MiniDelegatesSearchBar.qml</file>
     <file alias="Tasks.md">C:/Qt/6.7.2/VaultTones01/Tasks.md</file>
     <file alias="sources.qrc">C:/Qt/6.7.2/VaultTones01/sources.qrc</file>
   </qresource>
