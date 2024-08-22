@@ -727,6 +727,12 @@
 			"MU",
 			"EWIEGA46WW/moc_librarybackend.cpp",
 			null
+		],
+		[
+			"C:/Qt/6.7.2/VaultTones01/proxylibrarybackend.h",
+			"MU",
+			"EWIEGA46WW/moc_proxylibrarybackend.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -838,7 +844,8 @@
 	"SOURCES" : 
 	[
 		[ "C:/Qt/6.7.2/VaultTones01/librarybackend.cpp", "MU", null ],
-		[ "C:/Qt/6.7.2/VaultTones01/main.cpp", "MU", null ]
+		[ "C:/Qt/6.7.2/VaultTones01/main.cpp", "MU", null ],
+		[ "C:/Qt/6.7.2/VaultTones01/proxylibrarybackend.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
