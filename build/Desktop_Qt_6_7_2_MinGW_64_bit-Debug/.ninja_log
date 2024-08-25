@@ -168,3 +168,9 @@
 6639	12004	7462786756811214	CMakeFiles/appVaultTones01.dir/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/DelegateAlbun_qml.cpp.obj	9054271da9d625b
 7228	12095	7462786762701122	CMakeFiles/appVaultTones01.dir/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.rcc/qmlcache/appVaultTones01_QML/Library/MiniDelegatesSearchBar_qml.cpp.obj	276cd298a78892af
 12095	12709	7462786811372967	appVaultTones01.exe	f55efb35089ad78f
+19	56	7462799777904067	VaultTones01/Tasks.md	5c911bb56b0601c9
+19	56	7462799777904067	C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/VaultTones01/Tasks.md	5c911bb56b0601c9
+56	96	7462799778302274	.qt/rcc/qrc_appVaultTones01_raw_qml_0.cpp	2353b491fe0d88a
+56	96	7462799778302274	C:/Qt/6.7.2/VaultTones01/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/qrc_appVaultTones01_raw_qml_0.cpp	2353b491fe0d88a
+96	179	7462799778363926	CMakeFiles/appVaultTones01.dir/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qt/rcc/qrc_appVaultTones01_raw_qml_0.cpp.obj	226cc1a890d25fba
+179	722	7462799779198182	appVaultTones01.exe	f55efb35089ad78f

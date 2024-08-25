@@ -1,9 +1,8 @@
 # Tasks
 ---
 ## Where did I Stop
-- C++: I need to implement a search function in libraryBackend, using algorithms and magic stuff.
-- Time to use my brain
-- Brainn   ooooveeer Braaawn.
+- I finished the searchbar - ProxyLibrary
+- Time to Start the TextPlaylist Item.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp
@@ -17,21 +16,26 @@ void clearDataList() {
     m_dataList.clear();
 }
 ```
+
+## Pending OnClickedMethods: LibraryA - SearchBar
+1. Library: Add function to onClicked() delegates
+2. Search Bar: Make the functions of:
+    - Search button
+    - Plus button
+    - Filter button
+
 ## Second Level: LibraryA
-2. Completed - Learn how to use a bar with the library. (Scroll View) - (Slider). 
+2. Completed - **Learn** how to use a bar with the library. (Scroll View) - (Slider). 
 3. Completed - I need to add a mask to an Image in Delegate, for a border image.
 4. Completed - Move the code of the RoundedImage to a separate file .qml.
 5. Completed - Add a OnMouseHover and OnSelected effect over the RoundedImage.
 6. Completed - Start the blueprint of Search Bar.
 7. Obsidian: Documentate everything so far.
 
-## Second Level: SearchBar 
+## Third Level: SearchBar 
 1. Completed - Make the delegates of Search Bar.
-2. Search Bar: Make the functions of:
-    - Search button
-    - Plus button
-    - Filter button
-3. C++: I need to implement a void search function in libraryBackend, using algorithms and magic stuff.
+2. Completed - C++: I need to implement a void search function in libraryBackend, using algorithms and magic stuff.
+3. Completed - Learn about **QSortFilterProxy** model and implement it.
 
-## Third Level: LibraryA 2
-1. Add function to onClicked() delegates
+## Fourth Level: MusicAnnotator
+- Start making a .qml sample of an textAnnotator.
