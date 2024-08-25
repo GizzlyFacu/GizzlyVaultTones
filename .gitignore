@@ -1,6 +1,6 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-build/
+build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug
 *~
 *.autosave
 *.a
