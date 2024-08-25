@@ -1,7 +1,7 @@
 # Tasks
 ---
 ## Where did I Stop
-- I finished the searchbar - ProxyLibrary
+- I finished the searchbar - ProxyLibrary.
 - Time to Start the TextPlaylist Item.
 
 ## First Level: Working on Backend 
