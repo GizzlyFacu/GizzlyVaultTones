@@ -14,10 +14,4 @@ Window {
         id: base
         anchors.centerIn: parent
     }
-    DelegateSearchBar{
-        id:asss
-        x:205
-        y:105
-    }
-
 }

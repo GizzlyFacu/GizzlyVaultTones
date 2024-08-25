@@ -1,0 +1,30 @@
+{
+    "classes": [
+        {
+            "className": "ProxyLibrary",
+            "object": true,
+            "qualifiedClassName": "ProxyLibrary",
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "textInput",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "getTextInput",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QSortFilterProxyModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "proxylibrary.h",
+    "outputRevision": 68
+}

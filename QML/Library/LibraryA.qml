@@ -1,9 +1,9 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import VaultTones01
+import com.library
 Item {
     readonly property Pallete paletteMaster: Pallete{}
-    readonly property LibraryBackend libraryData: LibraryBackend {}
     id:root
     width: 487
     height: 367
@@ -28,15 +28,15 @@ Item {
 
         GridView{
             id:gridView
-            model:libraryData
+            model:LibraryBackends
             cellWidth: 120
             cellHeight: 143
             anchors.fill: parent
             delegate:
                 DelegateAlbun{
                 id:delegateItem
-                textInfo: songName
-                albumSource: songAlbumPhoto
+                textInfo: model.songName
+                albumSource: model.songAlbumPhoto
                 x:700
                 y:50
             }
@@ -70,20 +70,18 @@ Item {
         }
 
     }
+    MouseArea{
+        anchors.fill: background
+        onClicked: {
+            gridItem.focus=true;
 
+        }
+    }
 
     SearchBar{
         id:searchBar
         anchors.top: parent.top
-    }
-
-    Rectangle{
-        id:barLat
-        color:"black"
-        width: 15
-        height: 367
-        anchors.right: parent.right
-        opacity: 0
+        z:1
     }
 
 

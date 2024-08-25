@@ -9,17 +9,19 @@ appVaultTones01_autogen/timestamp: \
 	C:/Qt/6.7.2/VaultTones01/librarybackend.cpp \
 	C:/Qt/6.7.2/VaultTones01/librarybackend.h \
 	C:/Qt/6.7.2/VaultTones01/main.cpp \
-	C:/Qt/6.7.2/VaultTones01/proxylibrarybackend.cpp \
-	C:/Qt/6.7.2/VaultTones01/proxylibrarybackend.h \
+	C:/Qt/6.7.2/VaultTones01/proxylibrary.cpp \
+	C:/Qt/6.7.2/VaultTones01/proxylibrary.h \
 	C:/Qt/6.7.2/VaultTones01/sources.qrc \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QAbstractListModel \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/QSortFilterProxyModel \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/q20memory.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/q23utility.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractproxymodel.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qanystringview.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydata.h \
@@ -86,6 +88,7 @@ appVaultTones01_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qpointer.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qprocessordetection.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qrefcount.h \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/qregularexpression.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qscopedpointer.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qscopeguard.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qset.h \
@@ -93,6 +96,7 @@ appVaultTones01_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata_impl.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/qsortfilterproxymodel.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qstring.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qstringalgorithms.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/qstringbuilder.h \

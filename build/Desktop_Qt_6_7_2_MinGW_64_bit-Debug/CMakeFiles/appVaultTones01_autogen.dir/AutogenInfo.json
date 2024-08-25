@@ -729,9 +729,9 @@
 			null
 		],
 		[
-			"C:/Qt/6.7.2/VaultTones01/proxylibrarybackend.h",
+			"C:/Qt/6.7.2/VaultTones01/proxylibrary.h",
 			"MU",
-			"EWIEGA46WW/moc_proxylibrarybackend.cpp",
+			"EWIEGA46WW/moc_proxylibrary.cpp",
 			null
 		]
 	],
@@ -845,7 +845,7 @@
 	[
 		[ "C:/Qt/6.7.2/VaultTones01/librarybackend.cpp", "MU", null ],
 		[ "C:/Qt/6.7.2/VaultTones01/main.cpp", "MU", null ],
-		[ "C:/Qt/6.7.2/VaultTones01/proxylibrarybackend.cpp", "MU", null ]
+		[ "C:/Qt/6.7.2/VaultTones01/proxylibrary.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

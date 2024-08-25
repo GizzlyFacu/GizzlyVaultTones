@@ -1,6 +1,7 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
 import VaultTones01
+import com.library
 Item {
     id:root
     width: 460
@@ -9,20 +10,43 @@ Item {
         id:textIntro
         z:1
         width: 350
+        focus: root.focus
         anchors{
             verticalCenter: parent.verticalCenter
             verticalCenterOffset: -1
             left: parent.left
             leftMargin: 40
         }
-        text:"ingresa el texto aca aweonao"
+        text:""
         color: paletteMaster.whiteText
         clip:true
         cursorVisible: false
         font{
             pixelSize: 18
         }
+        onTextChanged: startSearch()
+
+        //Control For Escape and Initialize
+        function startSearch(){
+            ProxyLibrary.getTextInput(textIntro.text.toLowerCase());
+        }
+        Keys.onEscapePressed:{
+            textIntro.focus=false;
+        }
     }
+    DelegateSearchBar{
+        id:searchLibrary
+        visible: textIntro.focus
+        anchors{
+            top:searchBar.bottom
+            topMargin: 5
+        }
+        MouseArea{
+            anchors.fill: parent
+            onClicked: searchLibrary.visible=false
+        }
+    }
+
 
     Rectangle{
         id:searchBar

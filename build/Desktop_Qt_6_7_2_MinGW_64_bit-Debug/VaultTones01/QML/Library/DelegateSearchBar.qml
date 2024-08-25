@@ -1,7 +1,7 @@
 import QtQuick
 import VaultTones01
+import com.library
 Item {
-    readonly property LibraryBackend libraryData: LibraryBackend {}
     readonly property Pallete paletteMaster: Pallete{}
     id:root
     width: 460
@@ -29,10 +29,10 @@ Item {
             height: 250
 
 
-            model: libraryData
+            model: ProxyLibrary
             delegate: MiniDelegatesSearchBar{
-                albumInfo: songAlbumPhoto
-                textInfo: songName
+                albumInfo: model.songAlbumPhoto
+                textInfo: model.songName
             }
 
         }

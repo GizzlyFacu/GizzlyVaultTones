@@ -9,7 +9,7 @@ Item {
     id:root
     width:400
     height: 50
-    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.horizontalCenter: if(parent){return parent.horizontalCenter}
     Rectangle{
         id:spacedFill
         anchors.fill: parent
