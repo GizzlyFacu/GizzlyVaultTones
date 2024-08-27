@@ -74,7 +74,7 @@ Item {
     Text {
         id: delegateText
         font.pixelSize: 12
-        color:PaletteMaster.whiteText
+        color:PaletteMaster.lightGrayText
         width: itemAlbum.width
         height: 45
 

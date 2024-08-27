@@ -32,6 +32,7 @@ qt_add_qml_module(appVaultTones01
         SOURCES proxylibrary.h proxylibrary.cpp
         QML_FILES QML/Textplaylist/TextPlaylist.qml
         SOURCES palettemaster.h palettemaster.cpp
+        QML_FILES QML/Textplaylist/MusicAnnotator.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
