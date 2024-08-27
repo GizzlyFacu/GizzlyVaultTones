@@ -2,7 +2,7 @@ import QtQuick
 import VaultTones01
 import com.library
 Item {
-    readonly property Pallete paletteMaster: Pallete{}
+
     id:root
     width: 460
     height: 250
@@ -10,11 +10,11 @@ Item {
         id:backgroundWhite
         anchors.fill: parent
         radius:20
-        color:paletteMaster.darkGrayUI
+        color:PaletteMaster.darkGrayUI
     }
     Rectangle{
         id:secondbackgroundWhite
-        color: paletteMaster.darkGrayUI
+        color: PaletteMaster.darkGrayUI
         radius:20
         height: parent.height-10
         clip: true

@@ -1,8 +1,9 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
 import VaultTones01
+import com.library
 Item {
-    readonly property Pallete paletteMaster: Pallete{}
+
     property alias textInfo: delegateText.text
     property alias albumSource:albumImage.source
     id:root
@@ -73,7 +74,7 @@ Item {
     Text {
         id: delegateText
         font.pixelSize: 12
-        color:paletteMaster.whiteText
+        color:PaletteMaster.whiteText
         width: itemAlbum.width
         height: 45
 

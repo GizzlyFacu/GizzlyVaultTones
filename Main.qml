@@ -14,4 +14,10 @@ Window {
         id: base
         anchors.centerIn: parent
     }
+
+    TextPlaylist{
+        id:textplaylist
+        x:200
+
+    }
 }
