@@ -2,9 +2,12 @@ import QtQuick 2.15
 import com.library
 Item {
     id:root
+    width: 338
+    height: 367
+
     Rectangle{
-        width: 100
-        height: 100
-        color:PaletteMaster.darkPurple
+        anchors.fill: parent
+        color:PaletteMaster.darkGrayUI
+        radius: 20
     }
 }
