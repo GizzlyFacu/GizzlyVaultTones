@@ -16,11 +16,11 @@ Window {
         x:28
         y:101
     }
-        /*
+
     TextPlaylist{
         id:textplaylist
         x:896-338-31
         y:101
     }
-*/
+
 }

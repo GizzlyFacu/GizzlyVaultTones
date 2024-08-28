@@ -3,6 +3,7 @@
 #include "librarybackend.h"
 #include "proxylibrary.h"
 #include "palettemaster.h"
+#include "librarysongnotes.h"
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
@@ -14,6 +15,8 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("com.library",1,0,"ProxyLibrary",newProxyLibrary);
     PaletteMaster* newPalette = new PaletteMaster;
     qmlRegisterSingletonInstance("com.library",1,0,"PaletteMaster",newPalette);
+    LibrarySongNotes* newSongNotes=new LibrarySongNotes;
+    qmlRegisterSingletonInstance("com.library",1,0,"SongNotes",newSongNotes);
 
 
     QQmlApplicationEngine engine;

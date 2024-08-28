@@ -1,10 +1,25 @@
 import QtQuick 2.15
-
+import com.library
 Item {
     id:root
     width: parent.width
     height: 220
 
+    ListView{
+        id:textView
+        width: 400
+        height: 300
+        model: SongNotes
+        delegate:     TextEdit {
+            text: model.text
+            wrapMode: TextEdit.WordWrap
+            font.pixelSize: 18
+            color: "white"
+
+        }
+    }
+
+/*
     TextEdit {
         id: editor
         width: 400
@@ -15,4 +30,5 @@ Item {
         color: "white"
 
     }
+    */
 }
