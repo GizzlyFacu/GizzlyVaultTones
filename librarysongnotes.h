@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QAbstractListModel>
 #include <QList>
+//esta clase solo se encarga de mostrar
+//en la ListView el m_notesList
 struct SongNote{
     QString note;
     QString type;
@@ -28,7 +30,7 @@ public:
         NoteTextRole=Qt::UserRole+1,
         NoteTypeRole
     };
-    void addElements(QString pepe,QString pepa);
+    void showActualQlist(QList<SongNote*> List);
 private:
     QList<SongNote*> m_notesList;
 };

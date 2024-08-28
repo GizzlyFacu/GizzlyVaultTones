@@ -5,11 +5,16 @@
 #include <QQmlEngine>
 #include <QAbstractListModel>
 #include <QList>
+#include "librarysongnotes.h"
+//una parte del modelo se encarga de mostrar la data.
+//otra de enviar las Song Notes.
+
 
 struct Data{
     QString songName = "default name";
     QUrl songFile;
     QUrl songPhoto;
+    QList<SongNote*> m_notesList;
 };
 
 class LibraryBackend : public QAbstractListModel
@@ -33,7 +38,11 @@ signals:
 
 public slots:
     void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto);
+    void addSongNotes();
     void setSelected(int indets);
+public:
+    LibrarySongNotes* modelSongNote= new LibrarySongNotes;
+
 private:
     QList<Data*> m_dataList;
     int actualIndets;

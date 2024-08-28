@@ -3,9 +3,7 @@
 LibrarySongNotes::LibrarySongNotes(QObject *parent)
     : QAbstractListModel{parent}
 {
-    addElements("Falta Narrativa lalala", "video");
-    addElements("Cambiar pichulongos", "video");
-    addElements("audio", "audio");
+
 }
 
 int LibrarySongNotes::rowCount(const QModelIndex &parent) const
@@ -38,14 +36,13 @@ QHash<int, QByteArray> LibrarySongNotes::roleNames() const
     return result;
 }
 
-void LibrarySongNotes::addElements(QString pepe, QString pepa)
+void LibrarySongNotes::showActualQlist(QList<SongNote*> List)
 {
     beginInsertRows(QModelIndex(),m_notesList.length(),m_notesList.length());
-    SongNote* nota=new SongNote;
-    nota->note=pepe;
-    nota->type=pepa;
-    m_notesList.append(nota);
+    m_notesList=List;
     endInsertRows();
 }
+
+
 
 

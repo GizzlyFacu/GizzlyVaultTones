@@ -14,7 +14,7 @@ LibraryBackend::LibraryBackend(QObject *parent)
     addSongs("NOMBRE EPICO8", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
     addSongs("NOMBRE EPICO9", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
     addSongs("NOMBRE EPICO10", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
-
+    addSongNotes();
 }
 
 int LibraryBackend::rowCount(const QModelIndex &parent) const
@@ -67,12 +67,27 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
     endInsertRows();
 }
 
+void LibraryBackend::addSongNotes()
+{
+
+    SongNote* nota=new SongNote;
+    nota->note="nota";
+    nota->type="audio";
+    //no puedo anaidir data a un elemento -1 wtf
+    //m_dataList.at(actualIndets)->m_notesList.append(nota);
+
+    m_dataList.at(2)->m_notesList.append(nota);
+
+}
+
 void LibraryBackend::setSelected(int indets)
 {
 
     if(actualIndets==(-1)){
         actualIndets=indets;
         qDebug()<<"se ha aniadido un nuevo valor: "<<indets;
+        modelSongNote->showActualQlist(m_dataList.at(actualIndets)->m_notesList);
+
     }
     else if(actualIndets!=indets && actualIndets!=(-1)){
         qDebug()<<"se ha cambiado a un nuevo valor: "<<indets;

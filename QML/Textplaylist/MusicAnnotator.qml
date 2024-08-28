@@ -9,9 +9,9 @@ Item {
         id:textView
         width: 400
         height: 300
-        model: SongNotes
+        model: LibraryBackends.modelSongNote;
         delegate:     TextEdit {
-            text: model.text
+            text: model.note
             wrapMode: TextEdit.WordWrap
             font.pixelSize: 18
             color: "white"
