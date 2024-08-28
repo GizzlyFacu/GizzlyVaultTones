@@ -33,11 +33,10 @@ signals:
 
 public slots:
     void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto);
+    void setSelected(int indets);
 private:
     QList<Data*> m_dataList;
-
-
-
+    int actualIndets;
 };
 
 #endif // LIBRARYBACKEND_H

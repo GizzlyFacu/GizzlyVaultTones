@@ -4,12 +4,12 @@ import VaultTones01
 import com.library
 Item {
 
-    property alias textInfo: delegateText.text
-    property alias albumSource:albumImage.source
     id:root
     width: 100
     height: 143
-
+    signal clicked()
+    property alias textInfo: delegateText.text
+    property alias albumSource:albumImage.source
     Item{
         //roundedImage: la verdadera imagen es OpacityMask, los otros dos son mascaras
         id:itemAlbum
@@ -31,19 +31,19 @@ Item {
         }
 
         Image {
-                id: albumImage
-                visible:false
-                anchors.centerIn: parent
-                width: itemAlbum.width
-                height: itemAlbum.width
-            }
+            id: albumImage
+            visible:false
+            anchors.centerIn: parent
+            width: itemAlbum.width
+            height: itemAlbum.width
+        }
 
         OpacityMask {
-                width: itemAlbum.width
-                height: itemAlbum.width
-                source: albumImage
-                maskSource: metaMask
-            }
+            width: itemAlbum.width
+            height: itemAlbum.width
+            source: albumImage
+            maskSource: metaMask
+        }
         Item{
             property color selectedColor: "gray"
             id:selectedEffect
@@ -66,6 +66,7 @@ Item {
                 id:epicMouseArea
                 hoverEnabled: true
                 anchors.fill: parent
+                onClicked: root.clicked()
             }
         }
     }

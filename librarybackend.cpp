@@ -1,8 +1,9 @@
 #include "librarybackend.h"
-
+#include <QDebug>
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
 {
+    actualIndets=(-1);
     addSongs("NOMBRE EPICO", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
     addSongs("NOMBRE EPICO2", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
     addSongs("NOMBRE EPICO3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
@@ -30,7 +31,7 @@ QVariant LibraryBackend::data(const QModelIndex &index, int role) const
         Data* dataTemp=m_dataList[index.row()];
         switch ((Roles)role) {
         case SongNameRole:
-                return dataTemp->songName;
+            return dataTemp->songName;
             break;
         case SongFileRole:
             return dataTemp->songFile;
@@ -64,4 +65,17 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
     m_dataList.append(newSong);
 
     endInsertRows();
+}
+
+void LibraryBackend::setSelected(int indets)
+{
+
+    if(actualIndets==(-1)){
+        actualIndets=indets;
+        qDebug()<<"se ha aniadido un nuevo valor: "<<indets;
+    }
+    else if(actualIndets!=indets && actualIndets!=(-1)){
+        qDebug()<<"se ha cambiado a un nuevo valor: "<<indets;
+    }
+
 }

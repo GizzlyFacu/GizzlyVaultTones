@@ -31,6 +31,8 @@ void clearDataList() {
 2. LibraryA: Bar
     -Problem: the bar isn't working when u click on it
     -Posible Solution: focus?-drag?
+    -Real problem: a MouseArea was coverting the entire LibraryA, that's why was not receiving Clicks events.
+    -Solution: That mousearea was created for changing the focus of GridView. So i deletd it salaberga siuu
 ## Second Level: LibraryA
 2. Completed - **Learn** how to use a bar with the library. (Scroll View) - (Slider). 
 3. Completed - I need to add a mask to an Image in Delegate, for a border image.

@@ -27,7 +27,9 @@ Item {
 
         GridView{
             id:gridView
+            z:1
             model:LibraryBackends
+            focus: true
             cellWidth: 120
             cellHeight: 143
             anchors.fill: parent
@@ -36,6 +38,7 @@ Item {
                 id:delegateItem
                 textInfo: model.songName
                 albumSource: model.songAlbumPhoto
+                onClicked: LibraryBackends.setSelected(index)
                 x:700
                 y:50
             }
@@ -69,13 +72,7 @@ Item {
         }
 
     }
-    MouseArea{
-        anchors.fill: background
-        onClicked: {
-            gridItem.focus=true;
 
-        }
-    }
 
     SearchBar{
         id:searchBar
