@@ -11,6 +11,7 @@ struct Data{
     QString songName = "default name";
     QUrl songFile;
     QUrl songPhoto;
+    QList<Notes*> songNotes;//esto pertenece al otro modelo.
 };
 
 class LibraryBackend : public QAbstractListModel
@@ -40,8 +41,8 @@ public slots:
     void setSelected(int indets);
 private:
     QList<Data*> m_dataList;
-
     notesclass *m_notesmodel = new notesclass(this);
+    int actualIndex;
 };
 
 #endif // LIBRARYBACKEND_H

@@ -30,7 +30,7 @@ QVariant LibraryBackend::data(const QModelIndex &index, int role) const
         Data* dataTemp=m_dataList[index.row()];
         switch ((Roles)role) {
         case SongNameRole:
-                return dataTemp->songName;
+            return dataTemp->songName;
             break;
         case SongFileRole:
             return dataTemp->songFile;
@@ -68,18 +68,10 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
 
 void LibraryBackend::setSelected(int indets)
 {
-
-    QList<Notes*>sas;
-    Notes* cac=new Notes;
-    cac->note="biribang";
-    cac->type="typebang";
-    sas.append(cac);
-    if(indets==2){
-        qDebug()<<"actualizando lista brrr";
-
-        m_notesmodel->updateModel(sas);
-    }
-    qDebug()<<indets;
+    actualIndex=indets;
+    QList<Notes*> notesInfo=m_dataList.at(indets)->songNotes;
+    m_notesmodel->updateModel(notesInfo);
+    qDebug()<<"actualizando lista brrr"<<actualIndex;
 }
 
 notesclass *LibraryBackend::notesmodel() const
