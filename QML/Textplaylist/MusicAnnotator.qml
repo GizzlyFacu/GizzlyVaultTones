@@ -20,7 +20,7 @@ Item {
 
     ListView{
         id:cac
-        model:NotesClassDemo
+        model:LibraryBackends.notesmodel
         anchors.fill: parent
         delegate:Rectangle{
             width: 100

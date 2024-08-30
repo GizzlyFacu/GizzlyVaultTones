@@ -66,6 +66,7 @@ Item {
                 id:epicMouseArea
                 hoverEnabled: true
                 anchors.fill: parent
+                onClicked: LibraryBackends.setSelected(index)
             }
         }
     }

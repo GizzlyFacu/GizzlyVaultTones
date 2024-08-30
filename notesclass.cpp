@@ -3,10 +3,9 @@
 notesclass::notesclass(QObject *parent)
     : QAbstractListModel{parent}
 {
-    addNotes("papa 1","audio");
-    addNotes("papa 2","audio");
-    addNotes("papa 3","video");
-    addNotes("papa 4","video");
+    addNotes("sos","audio");
+    addNotes("ses","audios");
+
 }
 
 int notesclass::rowCount(const QModelIndex &parent) const
@@ -46,4 +45,11 @@ void notesclass::addNotes(QString Name, QString Type)
     data->type=Type;
     m_noteslist.append(data);
     endInsertRows();
+}
+
+void notesclass::updateModel(QList<Notes*> List)
+{
+    beginResetModel();
+    m_noteslist=List;
+    endResetModel();
 }

@@ -1,5 +1,5 @@
 #include "librarybackend.h"
-
+#include <QDebug>
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
 {
@@ -64,4 +64,25 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
     m_dataList.append(newSong);
 
     endInsertRows();
+}
+
+void LibraryBackend::setSelected(int indets)
+{
+
+    QList<Notes*>sas;
+    Notes* cac=new Notes;
+    cac->note="biribang";
+    cac->type="typebang";
+    sas.append(cac);
+    if(indets==2){
+        qDebug()<<"actualizando lista brrr";
+
+        m_notesmodel->updateModel(sas);
+    }
+    qDebug()<<indets;
+}
+
+notesclass *LibraryBackend::notesmodel() const
+{
+    return m_notesmodel;
 }

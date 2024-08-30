@@ -5,6 +5,7 @@
 #include <QQmlEngine>
 #include <QAbstractListModel>
 #include <QList>
+#include "notesclass.h"
 
 struct Data{
     QString songName = "default name";
@@ -16,6 +17,7 @@ class LibraryBackend : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
+    Q_PROPERTY(notesclass* notesmodel READ notesmodel CONSTANT)
 public:
     explicit LibraryBackend(QObject *parent = nullptr);
     // QAbstractItemModel interface
@@ -29,15 +31,17 @@ public:
         SongPhotoRole
     };
 
+    notesclass *notesmodel() const;
+
 signals:
 
 public slots:
     void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto);
+    void setSelected(int indets);
 private:
     QList<Data*> m_dataList;
 
-
-
+    notesclass *m_notesmodel = new notesclass(this);
 };
 
 #endif // LIBRARYBACKEND_H

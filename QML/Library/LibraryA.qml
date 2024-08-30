@@ -61,21 +61,10 @@ Item {
                     radius:10
                     color: PaletteMaster.darkGrayUI
                 }
-
-
-
             }
-
-        }
-
-    }
-    MouseArea{
-        anchors.fill: background
-        onClicked: {
-            gridItem.focus=true;
-
         }
     }
+
 
     SearchBar{
         id:searchBar
