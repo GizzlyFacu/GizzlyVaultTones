@@ -1,8 +1,8 @@
 import QtQuick
 import VaultTones01
+import com.library
 
 Item {
-    readonly property Pallete paletteMaster: Pallete{}
     property alias albumInfo:delegateImage.source
     property alias textInfo:delegateText.text
 
@@ -13,7 +13,7 @@ Item {
     Rectangle{
         id:spacedFill
         anchors.fill: parent
-        color:paletteMaster.darkGrayUI
+        color:PaletteMaster.darkGrayUI
     }
 
 
@@ -38,7 +38,7 @@ Item {
                 leftMargin: 10
             }
 
-            color: paletteMaster.whiteText
+            color: PaletteMaster.whiteText
             font{
                 pixelSize: 14
             }

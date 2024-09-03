@@ -5,4 +5,8 @@
         <file>assets/icons/search.svg</file>
     </qresource>
     <qresource prefix="/"/>
+    <qresource prefix="/textplaylist">
+        <file>DelegateText.qml</file>
+        <file>DelegateAudio.qml</file>
+    </qresource>
 </RCC>

@@ -18,7 +18,7 @@ Item {
             leftMargin: 40
         }
         text:""
-        color: paletteMaster.whiteText
+        color: PaletteMaster.whiteText
         clip:true
         cursorVisible: false
         font{
@@ -50,7 +50,7 @@ Item {
 
     Rectangle{
         id:searchBar
-        color:paletteMaster.darkGrayUI
+        color:PaletteMaster.darkGrayUI
         anchors.fill: parent
         radius:20
     }
@@ -58,7 +58,7 @@ Item {
         id:searchIcon
         iconWidth: 24
         iconHeight: 24
-        color:paletteMaster.whiteText
+        color:PaletteMaster.whiteText
         source:"qrc:/resources/assets/icons/search.svg"
         anchors{
             verticalCenter: parent.verticalCenter
@@ -75,7 +75,7 @@ Item {
         id:filterIcon
         iconWidth: 20
         iconHeight: 20
-        color:paletteMaster.whiteText
+        color:PaletteMaster.whiteText
         source:"qrc:/resources/assets/icons/filter.svg"
         anchors{
             verticalCenter: parent.verticalCenter
@@ -91,7 +91,7 @@ Item {
         id:plusIcon
         iconWidth: 20
         iconHeight: 20
-        color:paletteMaster.whiteText
+        color:PaletteMaster.whiteText
         source:"qrc:/resources/assets/icons/plus.svg"
         anchors{
             verticalCenter: parent.verticalCenter
@@ -105,7 +105,7 @@ Item {
     }
     Rectangle{
         id:separator
-        color:Qt.lighter(paletteMaster.lightGrayUI)
+        color:Qt.lighter(PaletteMaster.lightGrayUI)
         width: 2
         height: 23
         anchors{

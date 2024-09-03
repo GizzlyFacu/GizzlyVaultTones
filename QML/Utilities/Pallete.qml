@@ -1,5 +1,5 @@
 import QtQuick
-
+//this file is not in use, just for name reference.
 QtObject{
     //UI Main Colors
     readonly property color lightPurple: "#7C5CA7"

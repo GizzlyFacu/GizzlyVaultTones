@@ -3,14 +3,13 @@ import QtQuick.Controls.Basic
 import VaultTones01
 import com.library
 Item {
-    readonly property Pallete paletteMaster: Pallete{}
     id:root
     width: 487
     height: 367
     Rectangle{
         id:background
         anchors.fill: parent
-        color: paletteMaster.lightGrayUI
+        color: PaletteMaster.lightGrayUI
     }
     Item{
         id:gridItem
@@ -23,7 +22,7 @@ Item {
             id:chachos
             width: parent.width
             height: parent.height
-            color:paletteMaster.lightGrayUI
+            color:PaletteMaster.lightGrayUI
         }
 
         GridView{
@@ -45,7 +44,7 @@ Item {
                 id:scrollBang
                 background: Rectangle{
                     id:asdasdsd
-                    color:paletteMaster.whiteBar
+                    color:PaletteMaster.whiteBar
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     width: 15
@@ -60,23 +59,12 @@ Item {
                     implicitWidth: 15
                     implicitHeight: 10
                     radius:10
-                    color: paletteMaster.darkGrayUI
+                    color: PaletteMaster.darkGrayUI
                 }
-
-
-
             }
-
-        }
-
-    }
-    MouseArea{
-        anchors.fill: background
-        onClicked: {
-            gridItem.focus=true;
-
         }
     }
+
 
     SearchBar{
         id:searchBar

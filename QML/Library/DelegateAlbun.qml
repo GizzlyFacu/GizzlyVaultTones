@@ -1,8 +1,9 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
 import VaultTones01
+import com.library
 Item {
-    readonly property Pallete paletteMaster: Pallete{}
+
     property alias textInfo: delegateText.text
     property alias albumSource:albumImage.source
     id:root
@@ -65,6 +66,7 @@ Item {
                 id:epicMouseArea
                 hoverEnabled: true
                 anchors.fill: parent
+                onClicked: LibraryBackends.setSelected(index)
             }
         }
     }
@@ -73,7 +75,7 @@ Item {
     Text {
         id: delegateText
         font.pixelSize: 12
-        color:paletteMaster.whiteText
+        color:PaletteMaster.lightGrayText
         width: itemAlbum.width
         height: 45
 
