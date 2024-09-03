@@ -4,6 +4,7 @@ Item {
     id:root
     width: 338
     height: 367
+
     Item{
         id:spacedRoot
         width: 291

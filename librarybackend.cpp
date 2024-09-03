@@ -1,8 +1,10 @@
 #include "librarybackend.h"
 #include <QDebug>
+
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
 {
+
     addSongs("NOMBRE EPICO", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
     addSongs("NOMBRE EPICO2", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
     addSongs("NOMBRE EPICO3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));

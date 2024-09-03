@@ -3,8 +3,11 @@
 notesclass::notesclass(QObject *parent)
     : QAbstractListModel{parent}
 {
-    addNotes("sos","audio");
-    addNotes("ses","audios");
+    addNotes("1","text");
+    addNotes("2","text");
+    addNotes("3","audio");
+    addNotes("4","audio");
+    addNotes("5","text");
 
 }
 

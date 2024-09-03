@@ -4,33 +4,37 @@ Item {
     id:root
     width: parent.width
     height: 220
+    clip:true
 
-    ListModel{
-        id:modelgang
-        ListElement{
-            name:"sas"
-        }
-        ListElement{
-            name:"ses"
-        }
-        ListElement{
-            name:"sis"
-        }
-    }
 
     ListView{
-        id:cac
+        id:listNotes
         model:LibraryBackends.notesmodel
         anchors.fill: parent
-        delegate:Rectangle{
+        delegate:Item{
             width: 100
             height: 100
-            color:"black"
-            Text{
-                anchors.centerIn: parent
-                text: model.textnote;
-                color:"white"
+            Loader{
+                id:loader
+                source: {
+                    switch (model.typenote){
+                    case "text":
+                        return delegates.delegateText;
+                    case "audio":
+                        return delegates.delegateAudio;
+                    }
+                }
+                onLoaded: {
+                    loader.item.text = model.textnote
+                    loader.item.widthX = listNotes.width
+                }
             }
         }
+        footer: FooterItem{}
+    }
+    QtObject{
+        id:delegates
+        property string delegateText:"qrc:/textplaylist/DelegateText.qml"
+        property string delegateAudio: "qrc:/textplaylist/DelegateAudio.qml"
     }
 }
