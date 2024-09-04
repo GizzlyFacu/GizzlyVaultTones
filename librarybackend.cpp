@@ -1,6 +1,5 @@
 #include "librarybackend.h"
 #include <QDebug>
-
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
 {

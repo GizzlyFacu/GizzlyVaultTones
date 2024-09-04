@@ -3,10 +3,13 @@
         <file>assets/icons/filter.svg</file>
         <file>assets/icons/plus.svg</file>
         <file>assets/icons/search.svg</file>
+        <file>assets/icons/play.svg</file>
+        <file>assets/icons/pause.svg</file>
     </qresource>
     <qresource prefix="/"/>
     <qresource prefix="/textplaylist">
         <file>DelegateText.qml</file>
         <file>DelegateAudio.qml</file>
+        <file>ImageButtons.qml</file>
     </qresource>
 </RCC>

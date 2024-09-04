@@ -1,8 +1,8 @@
 # Tasks
 ---
 ## Where did I Stop
-- I finished the searchbar - ProxyLibrary.
-- Time to Start the TextPlaylist Item.
+- Finished the first part of TextPlaylist
+- Time to make a functional playlist yeehaaw.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp
@@ -17,12 +17,15 @@ void clearDataList() {
 }
 ```
 
-## Pending OnClickedMethods: LibraryA - SearchBar
+## Pending OnClickedMethods: LibraryA - SearchBar - TextPlaylist
 1. Library: Add function to onClicked() delegates
 2. Search Bar: Make the functions of:
     - Search button
     - Plus button
     - Filter button
+3. TextPlaylist: functions of:
+    - adding notes. (require another player for audionotes)
+    - playPause methods.
 
 ## Pending Problems: SearchBar - Library A
 1. Search Bar: SearchLibrary
@@ -44,5 +47,10 @@ void clearDataList() {
 2. Completed - C++: I need to implement a void search function in libraryBackend, using algorithms and magic stuff.
 3. Completed - Learn about **QSortFilterProxy** model and implement it.
 
-## Fourth Level: MusicAnnotator
-- Start making a .qml sample of an textAnnotator.
+## Fourth Level: TextPlaylist
+1. Completed - Start making a .qml sample of an textAnnotator.
+2. Completed - First Desgin of dinamic notes.
+3. Make the principal MusicPlayer.
+4. Try loading a song.
+5. Make the secondary AudionotePlayer.
+

@@ -11,23 +11,19 @@ Item {
         id:listNotes
         model:LibraryBackends.notesmodel
         anchors.fill: parent
-        delegate:Item{
-            width: 100
-            height: 100
-            Loader{
-                id:loader
-                source: {
-                    switch (model.typenote){
-                    case "text":
-                        return delegates.delegateText;
-                    case "audio":
-                        return delegates.delegateAudio;
-                    }
+        delegate:Loader{
+            id:loader
+            source: {
+                switch (model.typenote){
+                case "text":
+                    return delegates.delegateText;
+                case "audio":
+                    return delegates.delegateAudio;
                 }
-                onLoaded: {
-                    loader.item.text = model.textnote
-                    loader.item.widthX = listNotes.width
-                }
+            }
+            onLoaded: {
+                loader.item.text = model.textnote
+                loader.item.widthX = listNotes.width
             }
         }
         footer: FooterItem{}
