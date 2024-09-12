@@ -10,13 +10,13 @@ Window {
     visible: true
     color: PaletteMaster.lightGrayUI
     title: qsTr("Hello World")
-
+/*
     LibraryA{
         id: base
         x:28
         y:101
     }
-
+*/
     TextPlaylist{
         id:textplaylist
         x:896-338-31

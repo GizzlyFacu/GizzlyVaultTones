@@ -4,6 +4,7 @@
 #include "proxylibrary.h"
 #include "palettemaster.h"
 #include "notesclass.h"
+#include "musicplayer.h"
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
@@ -17,6 +18,8 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("com.library",1,0,"PaletteMaster",newPalette);
     notesclass* newNotesClass = new notesclass;
     qmlRegisterSingletonInstance("com.library",1,0,"NotesClassDemo",newNotesClass);
+    MusicPlayer* newMusicPlayer = new MusicPlayer;
+    qmlRegisterSingletonInstance("com.library",1,0,"MusicPlayer",newMusicPlayer);
 
 
     QQmlApplicationEngine engine;

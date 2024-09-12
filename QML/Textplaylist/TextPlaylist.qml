@@ -49,6 +49,17 @@ Item {
 
         }
     }
+
+    MusicPlayerController{
+        id:playerController
+        anchors{
+            bottom: parent.bottom
+            bottomMargin: 12
+        }
+
+        z:1
+    }
+
     Rectangle{
         id:background
         anchors.fill: parent

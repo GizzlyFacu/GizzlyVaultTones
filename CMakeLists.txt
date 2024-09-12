@@ -4,7 +4,7 @@ project(VaultTones01 VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick Core5Compat)
+find_package(Qt6 REQUIRED COMPONENTS Quick Core5Compat Multimedia)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -36,6 +36,9 @@ qt_add_qml_module(appVaultTones01
         SOURCES notesclass.h notesclass.cpp
         QML_FILES QML/Textplaylist/FooterItem.qml
         QML_FILES QML/Utilities/ImageButton.qml
+        SOURCES musicplayer.h musicplayer.cpp
+        QML_FILES QML/Textplaylist/MusicPlayerController.qml
+        QML_FILES QML/Utilities/IconButtonsFinal.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -54,7 +57,7 @@ target_include_directories(appVaultTones01 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Q
 
 
 target_link_libraries(appVaultTones01
-    PRIVATE Qt6::Quick Qt6::Core5Compat
+    PRIVATE Qt6::Quick Qt6::Core5Compat Qt6::Multimedia
 )
 
 include(GNUInstallDirs)
