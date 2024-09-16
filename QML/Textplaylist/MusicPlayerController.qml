@@ -46,7 +46,7 @@ Item {
     }
 
     Text{
-        id:musiPositionText
+        id:musicPositionText
         anchors.verticalCenter: slider.verticalCenter
         anchors.right: slider.left
         x:50

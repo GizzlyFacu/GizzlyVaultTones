@@ -1,8 +1,8 @@
 # Tasks
 ---
 ## Where did I Stop
-- Finished the first part of TextPlaylist
-- Time to make a functional playlist yeehaaw.
+- Finished the TextPlaylist pt I.
+- Time to load actual songs and connect everything.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp
@@ -53,4 +53,7 @@ void clearDataList() {
 3. Make the principal MusicPlayer.
 4. Try loading a song.
 5. Make the secondary AudionotePlayer.
+6. Finished TextPlaylist part I.
 
+## Fifth Level: Connecting Everything
+1. Learn how to load things to Qt in a internal folder(external project). I can try an app to load/save and show Images.
