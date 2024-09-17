@@ -6,6 +6,7 @@
 #include <QAbstractListModel>
 #include <QList>
 #include "notesclass.h"
+#include "musicplayer.h"
 
 struct Data{
     QString songName = "default name";
@@ -19,6 +20,10 @@ class LibraryBackend : public QAbstractListModel
     Q_OBJECT
     QML_ELEMENT
     Q_PROPERTY(notesclass* notesmodel READ notesmodel CONSTANT)
+    Q_PROPERTY(MusicPlayer* musicplayer READ musicplayer CONSTANT)
+    Q_PROPERTY(QString selected_songName READ selected_songName NOTIFY selected_songNameChanged FINAL)
+
+
 public:
     explicit LibraryBackend(QObject *parent = nullptr);
     // QAbstractItemModel interface
@@ -34,7 +39,15 @@ public:
 
     notesclass *notesmodel() const;
 
+    MusicPlayer *musicplayer() const;
+
+
+
+    QString selected_songName() const;
+
 signals:
+
+    void selected_songNameChanged();
 
 public slots:
     void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto);
@@ -43,6 +56,9 @@ private:
     QList<Data*> m_dataList;
     notesclass *m_notesmodel = new notesclass(this);
     int actualIndex;
+    MusicPlayer *m_musicplayer = new MusicPlayer(this);
+
+    QString m_selected_songName;
 };
 
 #endif // LIBRARYBACKEND_H

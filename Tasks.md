@@ -1,8 +1,8 @@
 # Tasks
 ---
 ## Where did I Stop
-- Finished the TextPlaylist pt I.
-- Time to load actual songs and connect everything.
+- Add Notes in Texplaylist.(UI menu)
+- Connect songNotes to Textplaylist.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp
@@ -56,4 +56,8 @@ void clearDataList() {
 6. Finished TextPlaylist part I.
 
 ## Fifth Level: Connecting Everything
-1. Learn how to load things to Qt in a internal folder(external project). I can try an app to load/save and show Images.
+1. Completed - Connect songFile to TextPlaylist.
+2. Completed - Connect songName to TextPlaylist.
+3. Add Notes in Texplaylist.
+4. Connect songNotes to Texplaylist.
+5. Learn how to load things to Qt in a internal folder(external project). I can try an app to load/save and show Images.

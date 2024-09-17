@@ -17,7 +17,7 @@ Item {
         Text{
             id:titleText
             width: parent.width
-            text:"title"
+            text:LibraryBackends.selected_songName
             font{
                 pixelSize: 20
                 bold:true

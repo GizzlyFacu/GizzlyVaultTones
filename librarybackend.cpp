@@ -72,10 +72,30 @@ void LibraryBackend::setSelected(int indets)
     actualIndex=indets;
     QList<Notes*> notesInfo=m_dataList.at(indets)->songNotes;
     m_notesmodel->updateModel(notesInfo);
+    //--actualizando textplaylist
+
+    m_selected_songName=m_dataList.at(indets)->songName;//Title
+    emit selected_songNameChanged();
+
+    m_musicplayer->configSong(m_dataList.at(indets)->songFile);//Music
     qDebug()<<"actualizando lista brrr"<<actualIndex;
 }
+
+
 
 notesclass *LibraryBackend::notesmodel() const
 {
     return m_notesmodel;
+}
+
+MusicPlayer *LibraryBackend::musicplayer() const
+{
+    return m_musicplayer;
+}
+
+
+
+QString LibraryBackend::selected_songName() const
+{
+    return m_selected_songName;
 }

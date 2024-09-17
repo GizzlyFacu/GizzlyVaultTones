@@ -6,6 +6,7 @@ Item {
     id:root
     height: 53
     width: parent.width
+
     Rectangle{
         id:button
         width: 40
@@ -22,12 +23,12 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
 
-            source: MusicPlayer.playPause ? "qrc:/resources/assets/icons/play.svg":"qrc:/resources/assets/icons/pause.svg"
+            source: LibraryBackends.musicplayer.playPause ? "qrc:/resources/assets/icons/play.svg":"qrc:/resources/assets/icons/pause.svg"
             color:PaletteMaster.darkGrayUI
             iconHeight: 24
             iconWidth: 24
             z:1
-            onClickeds:MusicPlayer.playMusic()
+            onClickeds:LibraryBackends.musicplayer.playMusic()
 
         }
     }
@@ -40,9 +41,9 @@ Item {
             topMargin: -(slider.height/2)
         }
         from: 0
-        to: MusicPlayer.sliderDuration
-        value: MusicPlayer.sliderPosition
-        onPressedChanged: MusicPlayer.pausedSlider(slider.value)
+        to: LibraryBackends.musicplayer.sliderDuration
+        value: LibraryBackends.musicplayer.sliderPosition
+        onPressedChanged: LibraryBackends.musicplayer.pausedSlider(slider.value)
     }
 
     Text{
@@ -50,14 +51,14 @@ Item {
         anchors.verticalCenter: slider.verticalCenter
         anchors.right: slider.left
         x:50
-        text:MusicPlayer.sliderPosition
+        text:LibraryBackends.musicplayer.sliderPosition
         color:"white"
     }
     Text{
         id:musicDurationText
         anchors.verticalCenter: slider.verticalCenter
         anchors.left:slider.right
-        text:MusicPlayer.sliderDuration
+        text:LibraryBackends.musicplayer.sliderDuration
         color:"white"
     }
 }

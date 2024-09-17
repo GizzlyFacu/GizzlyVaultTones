@@ -1,20 +1,20 @@
 #include "musicplayer.h"
 #include <QAudioDevice>
-#include <QAudioOutput>
+
 #include <QMediaDevices>
 #include <QDebug>
 MusicPlayer::MusicPlayer(QObject *parent)
     : QObject{parent}
 {
-    configSong(QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
+ connectMusicDuration();
 }
 
 void MusicPlayer::configSong(QUrl SongUrl)
 {
     setPlayPause(true);
     m_mediaPlayer.setSource(SongUrl);
-    m_mediaPlayer.setAudioOutput(new QAudioOutput(&m_mediaPlayer));
-    connectMusicDuration();
+    m_mediaPlayer.setAudioOutput(new QAudioOutput(&m_mediaPlayer));//puede ser
+
 }
 
 void MusicPlayer::playMusic()

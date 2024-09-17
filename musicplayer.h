@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QMediaPlayer>
+#include <QAudioOutput>
 class MusicPlayer : public QObject
 {
     Q_OBJECT
@@ -19,6 +20,7 @@ public:
     void setSliderPosition(int newSliderPosition);
 
     int sliderDuration() const;
+    void configSong(QUrl SongUrl);
 
 signals:
     void playPauseChanged();
@@ -29,7 +31,6 @@ public slots:
     void playMusic();
     void pausedSlider(int Position);
 private slots:
-    void configSong(QUrl SongUrl);
     //slider- position
     void connectSlider();
     void refreshSliderLoop();
@@ -43,6 +44,8 @@ private:
     bool playButtonPressed=false;
     int m_sliderPosition=0;
     int m_sliderDuration=0;
+
+
 };
 
 #endif // MUSICPLAYER_H
