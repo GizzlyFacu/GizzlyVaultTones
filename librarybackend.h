@@ -51,6 +51,7 @@ signals:
 
 public slots:
     void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto);
+    void addsongNotes(QString NoteText, QString Type);
     void setSelected(int indets);
 private:
     QList<Data*> m_dataList;

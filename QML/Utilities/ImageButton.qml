@@ -6,6 +6,7 @@ Item {
     property alias imageWidth:root.width
     property alias imageHeight: root.height
     property alias iconBaseColor: backgroundColor.color
+    signal clickd()
     Rectangle{
         id:backgroundColor
         anchors.fill: parent
@@ -31,7 +32,7 @@ Item {
     MouseArea{
         id:mouseArea
         anchors.fill: parent
-        onClicked: console.log("aniadir nota o audio")
+        onClicked: clickd()
     }
 
 

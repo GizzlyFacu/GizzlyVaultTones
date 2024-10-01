@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import "../Utilities"
 import com.library
-
+import QtQuick.Controls.Basic
 Item {
     id:root
     width: parent.width
@@ -38,6 +38,42 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             iconSource: "qrc:/resources/assets/icons/plus.svg"
             iconBaseColor: PaletteMaster.lightGrayUI
+            onClickd: menu.open()
         }
     }
+
+    Menu {
+        id: menu
+        y: imageButton.y
+        x:imageButton.x
+        icon{
+            source: "file:///C:/Qt/6.7.2/VaultTones01/assets/icons/play.svg"
+            height: 20
+            width: 20
+        }
+
+        MenuItem {
+            text: "Add Note..."
+            icon{
+                source: "file:///C:/Qt/6.7.2/VaultTones01/assets/icons/play.svg"
+                height: 20
+                width: 20
+                color:"red"
+            }
+            onClicked: LibraryBackends.addsongNotes("texto","text")
+        }
+        MenuItem {
+            text: "Add Audio..."
+            icon{
+                source: "file:///C:/Qt/6.7.2/VaultTones01/assets/icons/play.svg"
+                height: 20
+                width: 20
+                color:"red"
+            }
+            onClicked: LibraryBackends.addsongNotes("QUrl de la cancion","audio")
+        }
+
+
+    }
+
 }

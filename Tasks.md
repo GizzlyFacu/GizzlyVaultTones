@@ -1,8 +1,10 @@
 # Tasks
 ---
 ## Where did I Stop
-- Add Notes in Texplaylist.(UI menu)
+- Add Notes in Texplaylist.(Backend) / add audio-notes in the notesclass.
 - Connect songNotes to Textplaylist.
+- Now I need to add notes depending on which Track
+is selected
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp

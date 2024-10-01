@@ -67,6 +67,8 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
     endInsertRows();
 }
 
+
+
 void LibraryBackend::setSelected(int indets)
 {
     actualIndex=indets;
@@ -81,7 +83,17 @@ void LibraryBackend::setSelected(int indets)
     qDebug()<<"actualizando lista brrr"<<actualIndex;
 }
 
-
+void LibraryBackend::addsongNotes(QString NoteText, QString Type)
+{
+    //armar el Notes
+    Notes* nota=new Notes;
+    nota->note=NoteText;
+    nota->type=Type;
+    //aniadir Notes al Qlist
+    m_dataList.at(actualIndex)->songNotes.append(nota);
+    //actualizar la UI
+    m_notesmodel->updateModel(m_dataList.at(actualIndex)->songNotes);
+}
 
 notesclass *LibraryBackend::notesmodel() const
 {
