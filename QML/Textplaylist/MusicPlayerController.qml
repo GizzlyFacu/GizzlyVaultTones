@@ -3,6 +3,7 @@ import QtQuick.Controls.Basic
 import "../Utilities"
 import com.library
 Item {
+
     id:root
     height: 53
     width: parent.width
