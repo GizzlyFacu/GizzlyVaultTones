@@ -48,6 +48,10 @@ QHash<int, QByteArray> LibraryBackend::roleNames() const
 
 void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
 {
+    //making a secure copy folder for Songfile and SongPhoto
+
+
+    //actual add songs
     beginInsertRows(QModelIndex(),m_dataList.length(),m_dataList.length());
 
     Data* newSong=new Data;

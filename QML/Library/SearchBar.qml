@@ -118,6 +118,7 @@ Item {
     }
     FileDialog {
         //pasar la cancion a la libreria principal
+        //en la libreria se hace una copia de seguridad y se usa esa url
         id: fileDialog
         title: "Select an Audio"
         currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
@@ -132,10 +133,8 @@ Item {
         }
 
         function urlToName(){
-
             var name=fileDialog.selectedFile.toString().split("/").pop()
             name=name.split(".")[0]
-
             return (name)
         }
     }
