@@ -5,15 +5,7 @@ LibraryBackend::LibraryBackend(QObject *parent)
 {
 
     addSongs("NOMBRE EPICO", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
-    addSongs("NOMBRE EPICO2", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
-    addSongs("NOMBRE EPICO3", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
-    addSongs("NOMBRE EPICO4", QUrl::fromLocalFile("C:/Users/usuario/Music/untitled.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
-    addSongs("NOMBRE EPICO5", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
-    addSongs("NOMBRE EPICO6", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
-    addSongs("NOMBRE EPICO7", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
-    addSongs("NOMBRE EPICO8", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
-    addSongs("NOMBRE EPICO9", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
-    addSongs("NOMBRE EPICO10", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/si.png"));
+    addSongs("NOMBRE EPICO2", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
 
 }
 

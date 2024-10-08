@@ -4,6 +4,7 @@
 - Success Connecting notes depending on what Track is selected.
 ## What I need to do Next
 - Execute another mediaplayer for audio notes.
+- Do a FileDialog conection.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp

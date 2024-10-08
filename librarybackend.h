@@ -50,7 +50,7 @@ signals:
     void selected_songNameChanged();
 
 public slots:
-    void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto);
+    void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto=QUrl::fromLocalFile(":/images/assets/images/default_image.jpg"));
     void addsongNotes(QString NoteText, QString Type);
     void setSelected(int indets);
 private:

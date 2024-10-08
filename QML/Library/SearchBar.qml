@@ -1,4 +1,6 @@
 import QtQuick
+import QtCore
+import QtQuick.Dialogs
 import Qt5Compat.GraphicalEffects
 import VaultTones01
 import com.library
@@ -112,6 +114,21 @@ Item {
             verticalCenter: parent.verticalCenter
             right: parent.right
             rightMargin: 61
+        }
+    }
+    FileDialog {
+        //pasar la cancion a la libreria principal
+        id: fileDialog
+        title: "Select an Audio"
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: ["Audio (*.mp3 *.wav *.aac *.flac *.ogg)"]
+
+        onAccepted: {
+            //imagenxd.source = fileDialog.selectedFile // Set the selected file as the source for the Image component
+        }
+
+        onRejected: {
+            console.log("No file selected")
         }
     }
 }

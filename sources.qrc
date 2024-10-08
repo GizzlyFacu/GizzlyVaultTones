@@ -12,4 +12,7 @@
         <file>DelegateAudio.qml</file>
         <file>ImageButtons.qml</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>assets/images/default_image.jpg</file>
+    </qresource>
 </RCC>
