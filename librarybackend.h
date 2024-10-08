@@ -60,6 +60,8 @@ private:
     MusicPlayer *m_musicplayer = new MusicPlayer(this);
 
     QString m_selected_songName;
+
+    bool copiarArchivo(const QString &origen, const QString &destino);
 };
 
 #endif // LIBRARYBACKEND_H

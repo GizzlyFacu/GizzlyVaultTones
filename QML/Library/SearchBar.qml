@@ -134,7 +134,6 @@ Item {
 
         function urlToName(){
             var name=fileDialog.selectedFile.toString().split("/").pop()
-            name=name.split(".")[0]
             return (name)
         }
     }

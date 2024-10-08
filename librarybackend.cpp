@@ -1,12 +1,16 @@
 #include "librarybackend.h"
 #include <QDebug>
+//files managing
+#include <QFile>
+#include <QFileInfo>
+#include <QDir>
+#include <QStandardPaths>
+
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
 {
-
-    addSongs("NOMBRE EPICO", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
-    addSongs("NOMBRE EPICO2", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
-
+    addSongs("cumbion.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
+    addSongs("InitGang.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
 }
 
 int LibraryBackend::rowCount(const QModelIndex &parent) const
@@ -48,8 +52,16 @@ QHash<int, QByteArray> LibraryBackend::roleNames() const
 
 void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
 {
-    //making a secure copy folder for Songfile and SongPhoto
+    //creating a secure copy folder for SongFile and SongPhoto
+    QString FolderName=SongName.split(".")[0];
+    QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    QString SongFolderUrl=(DocumentsUrl+"/Vaultones"+"/"+FolderName);
+    QDir SecureFolder;
+    SecureFolder.mkpath(SongFolderUrl);
+    qDebug()<<SongName;
 
+    //moving songs to that folder
+    copiarArchivo(SongFile.toString().remove("file:///"),(DocumentsUrl+"/Vaultones"+"/"+FolderName+"/"+SongName));
 
     //actual add songs
     beginInsertRows(QModelIndex(),m_dataList.length(),m_dataList.length());
@@ -77,6 +89,28 @@ void LibraryBackend::setSelected(int indets)
 
     m_musicplayer->configSong(m_dataList.at(indets)->songFile);//Music
     qDebug()<<"actualizando lista brrr"<<actualIndex;
+}
+
+bool LibraryBackend::copiarArchivo(const QString &origen, const QString &destino)
+{
+    QFile archivoOrigen(origen);
+    QFile archivoDestino(destino);
+    qDebug()<<"origen: "<<origen;
+    qDebug()<<"destino: "<<destino;
+    // Verificamos si el archivo de origen existe
+    if (!archivoOrigen.exists()) {
+        qDebug() << "El archivo de origen no existe:" << origen;
+        return false;
+    }
+
+    // Intentamos copiar el archivo
+    if (archivoOrigen.copy(destino)) {
+        qDebug() << "Archivo copiado exitosamente de" << origen << "a" << destino;
+        return true;
+    } else {
+        qDebug() << "Error al copiar el archivo:" << archivoOrigen.errorString();
+        return false;
+    }
 }
 
 void LibraryBackend::addsongNotes(QString NoteText, QString Type)
