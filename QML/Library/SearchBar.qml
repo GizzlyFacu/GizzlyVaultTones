@@ -102,7 +102,7 @@ Item {
         }
         MouseArea{
             anchors.fill: parent
-            onClicked:console.log("plus button pressed")
+            onClicked:fileDialog.open()
         }
     }
     Rectangle{
@@ -124,11 +124,19 @@ Item {
         nameFilters: ["Audio (*.mp3 *.wav *.aac *.flac *.ogg)"]
 
         onAccepted: {
-            //imagenxd.source = fileDialog.selectedFile // Set the selected file as the source for the Image component
+            LibraryBackends.addSongs(fileDialog.urlToName(),fileDialog.selectedFile)
         }
 
         onRejected: {
             console.log("No file selected")
+        }
+
+        function urlToName(){
+
+            var name=fileDialog.selectedFile.toString().split("/").pop()
+            name=name.split(".")[0]
+
+            return (name)
         }
     }
 }
