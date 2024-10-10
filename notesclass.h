@@ -30,6 +30,8 @@ public:
     void updateModel(QList<Notes*> List);
 private:
     QList<Notes*> m_noteslist;
+
+
 };
 
 #endif // NOTESCLASS_H

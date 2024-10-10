@@ -58,7 +58,6 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
     QString SongFolderUrl=(DocumentsUrl+"/Vaultones"+"/"+FolderName);
     QDir SecureFolder;
     SecureFolder.mkpath(SongFolderUrl);
-    qDebug()<<SongName;
 
     //moving songs to that folder
     copiarArchivo(SongFile.toString().remove("file:///"),(DocumentsUrl+"/Vaultones"+"/"+FolderName+"/"+SongName));

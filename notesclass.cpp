@@ -42,6 +42,12 @@ QHash<int, QByteArray> notesclass::roleNames() const
 
 void notesclass::addNotes(QString Type,QString Name )
 {
+    //copiando archivos
+    if(Type=="audio"){
+
+    }else{
+
+    }
     beginInsertRows(QModelIndex(),m_noteslist.length(),m_noteslist.length());
     Notes* data=new Notes;
     data->note=Name;
@@ -56,3 +62,5 @@ void notesclass::updateModel(QList<Notes*> List)
     m_noteslist=List;
     endResetModel();
 }
+
+

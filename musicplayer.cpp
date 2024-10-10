@@ -82,7 +82,7 @@ void MusicPlayer::connectMusicDuration()
 void MusicPlayer::refreshMusicDuration()
 {
     m_sliderDuration=m_mediaPlayer.duration()/1000;
-    qDebug()<<"New Music Duration: "<< m_sliderDuration;
+    //qDebug()<<"New Music Duration: "<< m_sliderDuration;
     emit sliderDurationChanged();
 }
 //----------Auto QPROPERTIES----------------------
