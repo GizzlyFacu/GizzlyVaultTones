@@ -23,6 +23,7 @@ Item {
             }
             onLoaded: {
                 loader.item.text = model.textnote
+                loader.item.configSong()
                 loader.item.widthX = listNotes.width
             }
         }

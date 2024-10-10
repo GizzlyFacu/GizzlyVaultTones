@@ -60,6 +60,10 @@ void MusicPlayer::connectSlider()
 
 void MusicPlayer::refreshSliderLoop()
 {
+    if(m_mediaPlayer.duration()==m_mediaPlayer.position()){
+        m_mediaPlayer.stop();
+        setPlayPause(!m_playPause);
+    }
     m_sliderPosition=m_mediaPlayer.position()/1000;
     emit sliderPositionChanged();
 }

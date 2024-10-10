@@ -28,11 +28,11 @@ Item {
                 leftMargin: 5
             }
 
-            source:playPause ? "qrc:/resources/assets/icons/play.svg":"qrc:/resources/assets/icons/pause.svg"
+            source:notesMusicController.playPause ? "qrc:/resources/assets/icons/play.svg":"qrc:/resources/assets/icons/pause.svg"
             color:PaletteMaster.whiteText
             iconWidth: 30
             iconHeight: 30
-            onClickeds:playPause=!playPause
+            onClickeds:notesMusicController.playMusic()
         }
 
         Slider {
@@ -46,12 +46,14 @@ Item {
             }
             // modificar: cambiar LibraryBackens por notesMusicController. config audio y detalles de duracion.
             from: 0
-            to: LibraryBackends.musicplayer.sliderDuration
-            value: LibraryBackends.musicplayer.sliderPosition
-            onPressedChanged: LibraryBackends.musicplayer.pausedSlider(slider.value)
+            to: notesMusicController.sliderDuration
+            value: notesMusicController.sliderPosition
+            onPressedChanged: notesMusicController.pausedSlider(slider.value)
             // modificar
             handle.opacity: 0
         }
     }
-
+    function configSong(){
+        notesMusicController.configSong(root.text);
+    }
 }

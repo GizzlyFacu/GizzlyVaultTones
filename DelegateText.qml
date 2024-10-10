@@ -25,7 +25,10 @@ Item {
         width: parent.width-20
         wrapMode: TextEdit.WrapAtWordBoundaryOrAnywhere
         color: PaletteMaster.whiteText
-        text:"Text..."
+        text:root.text
         z:1
+    }
+    function configSong(){
+        //future action
     }
 }

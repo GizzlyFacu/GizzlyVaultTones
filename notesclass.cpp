@@ -3,11 +3,11 @@
 notesclass::notesclass(QObject *parent)
     : QAbstractListModel{parent}
 {
-    addNotes("1","text");
-    addNotes("3","audio");
-    addNotes("3","audio");
-    addNotes("4","text");
-    addNotes("3","audio");
+    addNotes("text","uno dos tres");
+    addNotes("audio","file:///C:/Users/usuario/Music/despiertame.mp3");
+    addNotes("audio","file:///C:/Users/usuario/Music/despiertame2.mp3");
+    addNotes("text","queso siu pap");
+    addNotes("audio","file:///C:/Users/usuario/Music/night1.mp3");
 
 }
 
@@ -40,7 +40,7 @@ QHash<int, QByteArray> notesclass::roleNames() const
     return result;
 }
 
-void notesclass::addNotes(QString Name, QString Type)
+void notesclass::addNotes(QString Type,QString Name )
 {
     beginInsertRows(QModelIndex(),m_noteslist.length(),m_noteslist.length());
     Notes* data=new Notes;

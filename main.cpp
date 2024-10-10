@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("com.library",1,0,"MusicPlayer",newMusicPlayer);
 
 
-
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/VaultTones01/Main.qml"));
     QObject::connect(

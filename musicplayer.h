@@ -20,7 +20,7 @@ public:
     void setSliderPosition(int newSliderPosition);
 
     int sliderDuration() const;
-    void configSong(QUrl SongUrl);
+
 
 signals:
     void playPauseChanged();
@@ -30,6 +30,7 @@ signals:
 public slots:
     void playMusic();
     void pausedSlider(int Position);
+    void configSong(QUrl SongUrl);
 private slots:
     //slider- position
     void connectSlider();

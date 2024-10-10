@@ -26,7 +26,7 @@ public:
         NoteRole=Qt::UserRole+1,
         TypeRole
     };
-    void addNotes(QString Name, QString Type);
+    void addNotes(QString Type,QString Name );
     void updateModel(QList<Notes*> List);
 private:
     QList<Notes*> m_noteslist;

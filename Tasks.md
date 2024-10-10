@@ -2,9 +2,12 @@
 ---
 ## Where did I Stop
 - Success Connecting notes depending on what Track is selected.
+- Success making a FileDialog conection + folder creation
 ## What I need to do Next
 - Execute another mediaplayer for audio notes.
-- Do a FileDialog conection.
+- Save SongNotes:
+    - Audio-notes inside songfolders.
+    - Text-notes as i dont know how to save that.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp
@@ -52,14 +55,19 @@ void clearDataList() {
 ## Fourth Level: TextPlaylist
 1. Completed - Start making a .qml sample of an textAnnotator.
 2. Completed - First Desgin of dinamic notes.
-3. Make the principal MusicPlayer.
-4. Try loading a song.
-5. Make the secondary AudionotePlayer.
-6. Finished TextPlaylist part I.
+3. Completed - Make the principal MusicPlayer.
+4. Completed - Try loading a song.
+5. Completed - Make the secondary AudionotePlayer.
+6. Execute another mediaplayer for audio-notes.
+7. Save audio-notes in the song folder.
+8. Save text-notes in the song folder.?
+12. Finished TextPlaylist part I.
 
 ## Fifth Level: Connecting Everything
 1. Completed - Connect songFile to TextPlaylist.
 2. Completed - Connect songName to TextPlaylist.
-3. Add Notes in Texplaylist.
-4. Connect songNotes to Texplaylist.
-5. Learn how to load things to Qt in a internal folder(external project). I can try an app to load/save and show Images.
+3. Completed - Add Notes in Texplaylist.
+4. Completed - Connect songNotes to Texplaylist.
+5. Completed - Learn how to load things to Qt in a internal folder(external project). I can try an app to load/save and show Images.
+6. Completed - FileDialog+Folder Creation
+7. Finiishd TextPlaylist
