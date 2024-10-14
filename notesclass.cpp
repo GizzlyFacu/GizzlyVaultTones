@@ -3,12 +3,11 @@
 notesclass::notesclass(QObject *parent)
     : QAbstractListModel{parent}
 {
-    addNotes("text","uno dos tres");
-    addNotes("audio","file:///C:/Users/usuario/Music/despiertame.mp3");
-    addNotes("audio","file:///C:/Users/usuario/Music/despiertame2.mp3");
-    addNotes("text","queso siu pap");
-    addNotes("audio","file:///C:/Users/usuario/Music/night1.mp3");
-
+    //addNotes("text","sample text...");
+    //addNotes("audio","file:///C:/Users/usuario/Music/despiertame.mp3");
+    //addNotes("audio","file:///C:/Users/usuario/Music/despiertame2.mp3");
+    //addNotes("text","sample text 2...");
+    //addNotes("audio","file:///C:/Users/usuario/Music/night1.mp3");
 }
 
 int notesclass::rowCount(const QModelIndex &parent) const
@@ -42,7 +41,7 @@ QHash<int, QByteArray> notesclass::roleNames() const
 
 void notesclass::addNotes(QString Type,QString Name )
 {
-    //copiando archivos
+    //copiando archivos: aca decidi dejar el proyecto en demo 13/10/2024. Seguire en algun otro momento.
     if(Type=="audio"){
 
     }else{

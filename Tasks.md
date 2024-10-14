@@ -3,9 +3,9 @@
 ## Where did I Stop
 - Success Connecting notes depending on what Track is selected.
 - Success making a FileDialog conection + folder creation
-## What I need to do Next
 - Execute another mediaplayer for audio notes.
-- Save SongNotes:
+## What's next?
+- notesclass - Save SongNotes: 13/10/2024
     - Audio-notes inside songfolders.
     - Text-notes as i dont know how to save that.
 
@@ -58,10 +58,10 @@ void clearDataList() {
 3. Completed - Make the principal MusicPlayer.
 4. Completed - Try loading a song.
 5. Completed - Make the secondary AudionotePlayer.
-6. Execute another mediaplayer for audio-notes.
-7. Save audio-notes in the song folder.
-8. Save text-notes in the song folder.?
-12. Finished TextPlaylist part I.
+6. Completed - Execute another mediaplayer for audio-notes.
+7. Completed - Save audio-notes in the song folder.
+8. Completed - Save text-notes in the song folder.?
+12. Completed - Finished TextPlaylist part I.
 
 ## Fifth Level: Connecting Everything
 1. Completed - Connect songFile to TextPlaylist.
@@ -70,4 +70,4 @@ void clearDataList() {
 4. Completed - Connect songNotes to Texplaylist.
 5. Completed - Learn how to load things to Qt in a internal folder(external project). I can try an app to load/save and show Images.
 6. Completed - FileDialog+Folder Creation
-7. Finiishd TextPlaylist
+7. Completed -  Finiishd TextPlaylist
