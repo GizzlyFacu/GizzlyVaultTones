@@ -2,6 +2,8 @@ import QtQuick
 import Qt5Compat.GraphicalEffects
 import VaultTones01
 import com.library
+import QtQuick.Controls.Basic
+
 Item {
 
     property alias textInfo: delegateText.text
@@ -31,19 +33,19 @@ Item {
         }
 
         Image {
-                id: albumImage
-                visible:false
-                anchors.centerIn: parent
-                width: itemAlbum.width
-                height: itemAlbum.width
-            }
+            id: albumImage
+            visible:false
+            anchors.centerIn: parent
+            width: itemAlbum.width
+            height: itemAlbum.width
+        }
 
         OpacityMask {
-                width: itemAlbum.width
-                height: itemAlbum.width
-                source: albumImage
-                maskSource: metaMask
-            }
+            width: itemAlbum.width
+            height: itemAlbum.width
+            source: albumImage
+            maskSource: metaMask
+        }
         Item{
             property color selectedColor: "gray"
             id:selectedEffect
@@ -66,11 +68,30 @@ Item {
                 id:epicMouseArea
                 hoverEnabled: true
                 anchors.fill: parent
-                onClicked: LibraryBackends.setSelected(index)
+                //onClicked: LibraryBackends.setSelected(index)
+                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                onClicked: (mouse)=> {
+                               if (mouse.button === Qt.RightButton)
+                               menu.open();
+                               else
+                               LibraryBackends.setSelected(index);
+
+                           }
             }
         }
     }
 
+    Menu {
+        id: menu
+        y: albumImage.y+10
+        x:albumImage.x+10
+        width: 50
+
+        MenuItem {
+            text: "Delete"
+            onClicked: LibraryBackends.deleteSongs(index);
+        }
+    }
 
     Text {
         id: delegateText

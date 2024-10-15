@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import com.library
+import QtQuick.Controls.Basic
 Item {
     id:root
     property string text: "spuops"
@@ -26,8 +27,28 @@ Item {
         wrapMode: TextEdit.WrapAtWordBoundaryOrAnywhere
         color: PaletteMaster.whiteText
         text:root.text
+        selectByMouse:true
         z:1
     }
+
+    MouseArea{
+        id:mouseArea
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+        onClicked: menu.open()
+    }
+    Menu {
+        id: menu
+        y: root.y
+        x:root.x
+        width: 50
+
+        MenuItem {
+            text: "Delete"
+            onClicked: {LibraryBackends.deleteSongNotes(index);}
+        }
+    }
+
     function configSong(){
         //future action
     }

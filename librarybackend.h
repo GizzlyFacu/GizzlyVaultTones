@@ -51,7 +51,9 @@ signals:
 
 public slots:
     void addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto=QUrl::fromLocalFile(":/images/assets/images/default_image.jpg"));
+    void deleteSongs(int Index);
     void addsongNotes(QString NoteText, QString Type);
+    void deleteSongNotes(int Index);
     void setSelected(int indets);
 private:
     QList<Data*> m_dataList;

@@ -2,6 +2,8 @@ import QtQuick 2.15
 import "../Utilities"
 import com.library
 import QtQuick.Controls.Basic
+import QtCore
+import QtQuick.Dialogs
 Item {
     id:root
     width: parent.width
@@ -70,9 +72,26 @@ Item {
                 width: 20
                 color:"red"
             }
-            onClicked: LibraryBackends.addsongNotes("QUrl de la cancion","audio")
+            onClicked: fileDialog.open()
+        }
+    }
+    FileDialog {
+        //pasar la cancion al addsongNotes
+        id: fileDialog
+        title: "Select an Audio"
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: ["Audio (*.mp3 *.wav *.aac *.flac *.ogg)"]
+
+        onAccepted: {
+            LibraryBackends.addsongNotes(fileDialog.selectedFile,"audio")
         }
 
+        onRejected: {
+            console.log("No file selected")
+        }
+    }
+
+    function audioUrl(){
 
     }
 

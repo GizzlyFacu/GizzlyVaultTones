@@ -1,10 +1,10 @@
 # Tasks
 ---
 ## Where did I Stop
-- Success Connecting notes depending on what Track is selected.
-- Success making a FileDialog conection + folder creation
-- Execute another mediaplayer for audio notes.
+- Success removing items from libraryA and Textplaylist.
+- Success configuring Add AudioNotes.
 ## What's next?
+- libraryA songs: autosearch for songs in that folder, if exists add to the app.
 - notesclass - Save SongNotes: 13/10/2024
     - Audio-notes inside songfolders.
     - Text-notes as i dont know how to save that.
@@ -71,3 +71,8 @@ void clearDataList() {
 5. Completed - Learn how to load things to Qt in a internal folder(external project). I can try an app to load/save and show Images.
 6. Completed - FileDialog+Folder Creation
 7. Completed -  Finiishd TextPlaylist
+
+## Sixth Level: AutoUpload source and Add things
+1. LibraryA songs: autosearch for songs in that folder, if exists add to the app.
+2. Audio-notes inside songfolders.
+3. Text-notes as i dont know how to save that.

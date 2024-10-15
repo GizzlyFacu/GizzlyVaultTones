@@ -27,6 +27,7 @@ public:
         TypeRole
     };
     void addNotes(QString Type,QString Name );
+
     void updateModel(QList<Notes*> List);
 private:
     QList<Notes*> m_noteslist;

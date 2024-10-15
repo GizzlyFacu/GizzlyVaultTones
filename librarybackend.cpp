@@ -9,8 +9,8 @@
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
 {
-    //addSongs("cumbion.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
-    //addSongs("InitGang.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
+    addSongs("cumbion.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
+    addSongs("InitGang.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
 }
 
 int LibraryBackend::rowCount(const QModelIndex &parent) const
@@ -74,6 +74,14 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
     endInsertRows();
 }
 
+void LibraryBackend::deleteSongs(int Index)
+{
+    beginRemoveRows(QModelIndex(),Index,Index);
+
+    m_dataList.removeAt(Index);
+    endRemoveRows();
+}
+
 
 
 void LibraryBackend::setSelected(int indets)
@@ -114,6 +122,12 @@ bool LibraryBackend::copiarArchivo(const QString &origen, const QString &destino
 
 void LibraryBackend::addsongNotes(QString NoteText, QString Type)
 {
+    if(Type=="audio"){
+        qDebug()<<"audio";
+    }else{
+        qDebug()<<"texto";
+    }
+
     //armar el Notes
     Notes* nota=new Notes;
     nota->note=NoteText;
@@ -121,6 +135,12 @@ void LibraryBackend::addsongNotes(QString NoteText, QString Type)
     //aniadir Notes al Qlist
     m_dataList.at(actualIndex)->songNotes.append(nota);
     //actualizar la UI
+    m_notesmodel->updateModel(m_dataList.at(actualIndex)->songNotes);
+}
+
+void LibraryBackend::deleteSongNotes(int Index)
+{
+    m_dataList.at(actualIndex)->songNotes.removeAt(Index);
     m_notesmodel->updateModel(m_dataList.at(actualIndex)->songNotes);
 }
 

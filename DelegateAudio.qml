@@ -52,7 +52,27 @@ Item {
             // modificar
             handle.opacity: 0
         }
+        MouseArea{
+            id:mouseArea
+            anchors.fill: parent
+            acceptedButtons: Qt.RightButton
+            onClicked: menu.open()
+        }
     }
+
+
+    Menu {
+        id: menu
+        y: root.y
+        x:root.x
+        width: 50
+
+        MenuItem {
+            text: "Delete"
+            onClicked: {LibraryBackends.deleteSongNotes(index);}
+        }
+    }
+
     function configSong(){
         notesMusicController.configSong(root.text);
     }

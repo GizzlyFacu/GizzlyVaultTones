@@ -3,11 +3,11 @@
 notesclass::notesclass(QObject *parent)
     : QAbstractListModel{parent}
 {
-    //addNotes("text","sample text...");
-    //addNotes("audio","file:///C:/Users/usuario/Music/despiertame.mp3");
-    //addNotes("audio","file:///C:/Users/usuario/Music/despiertame2.mp3");
-    //addNotes("text","sample text 2...");
-    //addNotes("audio","file:///C:/Users/usuario/Music/night1.mp3");
+    addNotes("text","sample text...");
+    addNotes("audio","file:///C:/Users/usuario/Music/despiertame.mp3");
+    addNotes("audio","file:///C:/Users/usuario/Music/despiertame2.mp3");
+    addNotes("text","sample text 2...");
+    addNotes("audio","file:///C:/Users/usuario/Music/night1.mp3");
 }
 
 int notesclass::rowCount(const QModelIndex &parent) const
@@ -41,12 +41,8 @@ QHash<int, QByteArray> notesclass::roleNames() const
 
 void notesclass::addNotes(QString Type,QString Name )
 {
-    //copiando archivos: aca decidi dejar el proyecto en demo 13/10/2024. Seguire en algun otro momento.
-    if(Type=="audio"){
+    //esto es solo de prueba, sirve para manipular las notas desde fuera de librarybackend
 
-    }else{
-
-    }
     beginInsertRows(QModelIndex(),m_noteslist.length(),m_noteslist.length());
     Notes* data=new Notes;
     data->note=Name;
