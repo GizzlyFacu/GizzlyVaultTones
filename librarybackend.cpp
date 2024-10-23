@@ -9,8 +9,9 @@
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
 {
-    addSongs("cumbion.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
-    addSongs("InitGang.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
+    //addSongs("cumbion.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
+    //addSongs("InitGang.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
+    autoSearch();
 }
 
 int LibraryBackend::rowCount(const QModelIndex &parent) const
@@ -98,12 +99,44 @@ void LibraryBackend::setSelected(int indets)
     qDebug()<<"actualizando lista brrr"<<actualIndex;
 }
 
+void LibraryBackend::autoSearch()
+{
+    //autobusca canciones dentro de las carpetas que NO esten en Notas
+    //estas siempre van a ser los temas principales.
+    QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    QString SongFolderUrl=(DocumentsUrl+"/Vaultones");
+    QDir tracks(SongFolderUrl);
+
+    //colocando filtros a la carpeta
+    tracks.setFilter(QDir::Files | QDir::NoDotAndDotDot | QDir::AllDirs);
+    QStringList namefilters;
+    namefilters<<"*.mp3";// << es lo mismo que .append()
+    tracks.setNameFilters(namefilters);
+
+    //busqueda
+    QFileInfoList fileList = tracks.entryInfoList();  // Obtener la lista de archivos
+    for (const QFileInfo &fileInfo : fileList) {
+        if (fileInfo.isDir() && fileInfo.fileName()!="Notes") {
+            // Si es un directorio, y es distinto a Notes, podemos buscar recursivamente dentro
+            QDir subDir(fileInfo.filePath());
+            QFileInfoList subFileList = subDir.entryInfoList(QDir::Files);
+            for (const QFileInfo &subFileInfo : subFileList) {
+                //qDebug() << "Archivo en subdirectorio:" << subFileInfo.fileName();
+                addSongs(subFileInfo.fileName(),subFileInfo.filePath());
+            }
+        } else {
+            qDebug() << "Archivo en el directorio principal:" << fileInfo.fileName();
+        }
+    }
+
+}
+
 bool LibraryBackend::copiarArchivo(const QString &origen, const QString &destino)
 {
     QFile archivoOrigen(origen);
     QFile archivoDestino(destino);
-    qDebug()<<"origen: "<<origen;
-    qDebug()<<"destino: "<<destino;
+    //qDebug()<<"origen: "<<origen;
+    //qDebug()<<"destino: "<<destino;
     // Verificamos si el archivo de origen existe
     if (!archivoOrigen.exists()) {
         qDebug() << "El archivo de origen no existe:" << origen;

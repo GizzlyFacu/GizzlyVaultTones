@@ -1,10 +1,10 @@
 # Tasks
 ---
 ## Where did I Stop
-- Success removing items from libraryA and Textplaylist.
-- Success configuring Add AudioNotes.
+
+- Success libraryA songs: autosearch for songs in that folder, if exists add to the app.
+
 ## What's next?
-- libraryA songs: autosearch for songs in that folder, if exists add to the app.
 - notesclass - Save SongNotes: 13/10/2024
     - Audio-notes inside songfolders.
     - Text-notes as i dont know how to save that.
@@ -73,6 +73,8 @@ void clearDataList() {
 7. Completed -  Finiishd TextPlaylist
 
 ## Sixth Level: AutoUpload source and Add things
-1. LibraryA songs: autosearch for songs in that folder, if exists add to the app.
-2. Audio-notes inside songfolders.
-3. Text-notes as i dont know how to save that.
+1. Completed - LibraryA songs: autosearch for songs in that folder, if exists add to the app.
+2. Completed - Delete audioNotes and Songs.
+3. Audio-notes inside songfolders. ( save and autosearch )
+4. Text-notes as i dont know how to save that.
+

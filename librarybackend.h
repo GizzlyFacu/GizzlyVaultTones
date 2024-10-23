@@ -55,6 +55,8 @@ public slots:
     void addsongNotes(QString NoteText, QString Type);
     void deleteSongNotes(int Index);
     void setSelected(int indets);
+private slots:
+    void autoSearch();
 private:
     QList<Data*> m_dataList;
     notesclass *m_notesmodel = new notesclass(this);

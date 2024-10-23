@@ -4,8 +4,8 @@ notesclass::notesclass(QObject *parent)
     : QAbstractListModel{parent}
 {
     addNotes("text","sample text...");
-    addNotes("audio","file:///C:/Users/usuario/Music/despiertame.mp3");
-    addNotes("audio","file:///C:/Users/usuario/Music/despiertame2.mp3");
+    addNotes("audio","file:///C:/Users/usuario/Music/night1edison.mp3");
+    addNotes("audio","file:///C:/Users/usuario/Music/night1edison.mp3");
     addNotes("text","sample text 2...");
     addNotes("audio","file:///C:/Users/usuario/Music/night1.mp3");
 }
