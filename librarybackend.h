@@ -5,6 +5,8 @@
 #include <QQmlEngine>
 #include <QAbstractListModel>
 #include <QList>
+#include <QStandardPaths>
+
 #include "notesclass.h"
 #include "musicplayer.h"
 
@@ -62,10 +64,11 @@ private:
     notesclass *m_notesmodel = new notesclass(this);
     int actualIndex;
     MusicPlayer *m_musicplayer = new MusicPlayer(this);
-
     QString m_selected_songName;
-
     bool copiarArchivo(const QString &origen, const QString &destino);
+    QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+
+
 };
 
 #endif // LIBRARYBACKEND_H

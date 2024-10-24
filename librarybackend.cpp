@@ -4,7 +4,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QDir>
-#include <QStandardPaths>
 
 LibraryBackend::LibraryBackend(QObject *parent)
     : QAbstractListModel{parent}
@@ -55,15 +54,15 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
 {
     //creating a secure copy folder for SongFile and SongPhoto
     QString FolderName=SongName.split(".")[0];
-    QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
     QString SongFolderUrl=(DocumentsUrl+"/Vaultones"+"/"+FolderName);
     QDir SecureFolder;
     SecureFolder.mkpath(SongFolderUrl);
 
-    //moving songs to that folder
+    //Moving songs to that folder and Creating Notes-Folder
     copiarArchivo(SongFile.toString().remove("file:///"),(DocumentsUrl+"/Vaultones"+"/"+FolderName+"/"+SongName));
-
-    //actual add songs
+    QDir NotesFolder;
+    NotesFolder.mkpath(SongFolderUrl+"/Notes");
+    //Actual add songs
     beginInsertRows(QModelIndex(),m_dataList.length(),m_dataList.length());
 
     Data* newSong=new Data;
@@ -83,8 +82,6 @@ void LibraryBackend::deleteSongs(int Index)
     endRemoveRows();
 }
 
-
-
 void LibraryBackend::setSelected(int indets)
 {
     actualIndex=indets;
@@ -96,39 +93,7 @@ void LibraryBackend::setSelected(int indets)
     emit selected_songNameChanged();
 
     m_musicplayer->configSong(m_dataList.at(indets)->songFile);//Music
-    qDebug()<<"actualizando lista brrr"<<actualIndex;
-}
-
-void LibraryBackend::autoSearch()
-{
-    //autobusca canciones dentro de las carpetas que NO esten en Notas
-    //estas siempre van a ser los temas principales.
-    QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-    QString SongFolderUrl=(DocumentsUrl+"/Vaultones");
-    QDir tracks(SongFolderUrl);
-
-    //colocando filtros a la carpeta
-    tracks.setFilter(QDir::Files | QDir::NoDotAndDotDot | QDir::AllDirs);
-    QStringList namefilters;
-    namefilters<<"*.mp3";// << es lo mismo que .append()
-    tracks.setNameFilters(namefilters);
-
-    //busqueda
-    QFileInfoList fileList = tracks.entryInfoList();  // Obtener la lista de archivos
-    for (const QFileInfo &fileInfo : fileList) {
-        if (fileInfo.isDir() && fileInfo.fileName()!="Notes") {
-            // Si es un directorio, y es distinto a Notes, podemos buscar recursivamente dentro
-            QDir subDir(fileInfo.filePath());
-            QFileInfoList subFileList = subDir.entryInfoList(QDir::Files);
-            for (const QFileInfo &subFileInfo : subFileList) {
-                //qDebug() << "Archivo en subdirectorio:" << subFileInfo.fileName();
-                addSongs(subFileInfo.fileName(),subFileInfo.filePath());
-            }
-        } else {
-            qDebug() << "Archivo en el directorio principal:" << fileInfo.fileName();
-        }
-    }
-
+    qDebug()<<"actualizando lista brrr"<<actualIndex<<"cancion: "<<m_selected_songName;
 }
 
 bool LibraryBackend::copiarArchivo(const QString &origen, const QString &destino)
@@ -155,8 +120,14 @@ bool LibraryBackend::copiarArchivo(const QString &origen, const QString &destino
 
 void LibraryBackend::addsongNotes(QString NoteText, QString Type)
 {
+    //Guardado de archivos en local>Copiar archivo
+    //NoteText audio = "file:///C:/Users/usuario/Music/cumbion.mp3"
+
     if(Type=="audio"){
-        qDebug()<<"audio";
+        QString FolderName=m_selected_songName.split(".")[0];//"(cumbion)"."mp3"
+        QString SongName= NoteText.split("/").back();//"cancioncopiada.mp3"
+        //qDebug()<<SongName;
+        copiarArchivo(NoteText.remove("file:///"),(DocumentsUrl+"/Vaultones/"+FolderName+"/Notes/"+SongName));
     }else{
         qDebug()<<"texto";
     }
@@ -187,9 +158,38 @@ MusicPlayer *LibraryBackend::musicplayer() const
     return m_musicplayer;
 }
 
-
-
 QString LibraryBackend::selected_songName() const
 {
     return m_selected_songName;
+}
+void LibraryBackend::autoSearch()
+{
+    //autobusca canciones dentro de las carpetas que NO esten en Notas
+    //estas siempre van a ser los temas principales.
+    QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    QString SongFolderUrl=(DocumentsUrl+"/Vaultones");
+    QDir tracks(SongFolderUrl);
+
+    //colocando filtros a la carpeta
+    tracks.setFilter(QDir::Files | QDir::NoDotAndDotDot | QDir::AllDirs);
+    QStringList namefilters;
+    namefilters<<"*.mp3";// << es lo mismo que .append()
+    tracks.setNameFilters(namefilters);
+
+    //busqueda
+    QFileInfoList fileList = tracks.entryInfoList();  // Obtener la lista de archivos
+    for (const QFileInfo &fileInfo : fileList) {
+        if (fileInfo.isDir() && fileInfo.fileName()!="Notes") {
+            // Si es un directorio, y es distinto a Notes, podemos buscar recursivamente dentro
+            QDir subDir(fileInfo.filePath());
+            QFileInfoList subFileList = subDir.entryInfoList(QDir::Files);
+            for (const QFileInfo &subFileInfo : subFileList) {
+                //qDebug() << "Archivo en subdirectorio:" << subFileInfo.fileName();
+                addSongs(subFileInfo.fileName(),subFileInfo.filePath());
+            }
+        } else {
+            qDebug() << "Archivo en el directorio principal:" << fileInfo.fileName();
+        }
+    }
+
 }

@@ -1,12 +1,11 @@
 # Tasks
 ---
 ## Where did I Stop
-
-- Success libraryA songs: autosearch for songs in that folder, if exists add to the app.
-
+- Success notesclass -> Save SongNotes ->Audio-notes inside songfolders.
 ## What's next?
+- Hook the new Cloned Urls(Songs + Audionotes) as the principal Media Source.
+- Autosearch for AudioNotes
 - notesclass - Save SongNotes: 13/10/2024
-    - Audio-notes inside songfolders.
     - Text-notes as i dont know how to save that.
 
 ## First Level: Working on Backend 
@@ -75,6 +74,6 @@ void clearDataList() {
 ## Sixth Level: AutoUpload source and Add things
 1. Completed - LibraryA songs: autosearch for songs in that folder, if exists add to the app.
 2. Completed - Delete audioNotes and Songs.
-3. Audio-notes inside songfolders. ( save and autosearch )
+3. Completed - Audio-notes inside songfolders. ( save and autosearch )
 4. Text-notes as i dont know how to save that.
 
