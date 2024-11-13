@@ -1,12 +1,10 @@
 # Tasks
 ---
 ## Where did I Stop
-- Success notesclass -> Save SongNotes ->Audio-notes inside songfolders.
+- Saving notes.
 ## What's next?
-- Hook the new Cloned Urls(Songs + Audionotes) as the principal Media Source.
-- Autosearch for AudioNotes
-- notesclass - Save SongNotes: 13/10/2024
-    - Text-notes as i dont know how to save that.
+- Saving notes: 
+    - I think the struct info are not updating at the same time as UI text.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp

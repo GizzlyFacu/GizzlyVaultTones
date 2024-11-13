@@ -9,6 +9,7 @@
 
 #include "notesclass.h"
 #include "musicplayer.h"
+#include "savejson.h"
 
 struct Data{
     QString songName = "default name";
@@ -57,17 +58,21 @@ public slots:
     void addsongNotes(QString NoteText, QString Type);
     void deleteSongNotes(int Index);
     void setSelected(int indets);
+    void saveNotes();
+    bool notes_setData(int index, const QVariant &value, int role);
 private slots:
     void autoSearch();
+    void notes_autoSearch();
 private:
     QList<Data*> m_dataList;
     notesclass *m_notesmodel = new notesclass(this);
-    int actualIndex;
+    int actualIndex=0;
     MusicPlayer *m_musicplayer = new MusicPlayer(this);
     QString m_selected_songName;
     bool copiarArchivo(const QString &origen, const QString &destino);
     QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
+    saveJSON jsonController;
 
 };
 

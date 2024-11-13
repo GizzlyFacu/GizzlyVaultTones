@@ -62,7 +62,7 @@ Item {
                 width: 20
                 color:"red"
             }
-            onClicked: LibraryBackends.addsongNotes("texto","text")
+            onClicked: LibraryBackends.addsongNotes("sample text","text")
         }
         MenuItem {
             text: "Add Audio..."
@@ -73,6 +73,16 @@ Item {
                 color:"red"
             }
             onClicked: fileDialog.open()
+        }
+        MenuItem {
+            text: "Save Notes"
+            icon{
+                source: "file:///C:/Qt/6.7.2/VaultTones01/assets/icons/play.svg"
+                height: 20
+                width: 20
+                color:"red"
+            }
+            onClicked: LibraryBackends.saveNotes()
         }
     }
     FileDialog {

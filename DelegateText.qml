@@ -3,7 +3,7 @@ import com.library
 import QtQuick.Controls.Basic
 Item {
     id:root
-    property string text: "spuops"
+    property string text: "texto"
     property int widthX:100
     height: baseText.contentHeight+10
     width: widthX
@@ -26,9 +26,10 @@ Item {
         width: parent.width-20
         wrapMode: TextEdit.WrapAtWordBoundaryOrAnywhere
         color: PaletteMaster.whiteText
-        text:root.text
+        text:root.text//aca deberia sincronizar con el struct
         selectByMouse:true
         z:1
+        onTextChanged: LibraryBackends.notes_setData(model.index, text, Qt.UserRole + 1)
     }
 
     MouseArea{

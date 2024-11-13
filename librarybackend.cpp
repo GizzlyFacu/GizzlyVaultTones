@@ -60,14 +60,17 @@ void LibraryBackend::addSongs(QString SongName, QUrl SongFile, QUrl SongPhoto)
 
     //Moving songs to that folder and Creating Notes-Folder
     copiarArchivo(SongFile.toString().remove("file:///"),(DocumentsUrl+"/Vaultones"+"/"+FolderName+"/"+SongName));
+    QString cloned_SongFile = (DocumentsUrl+"/Vaultones"+"/"+FolderName+"/"+SongName);
+    //Make a Note folder por each track created
     QDir NotesFolder;
     NotesFolder.mkpath(SongFolderUrl+"/Notes");
+
     //Actual add songs
     beginInsertRows(QModelIndex(),m_dataList.length(),m_dataList.length());
 
     Data* newSong=new Data;
     newSong->songName = SongName;
-    newSong->songFile = SongFile;
+    newSong->songFile = cloned_SongFile;
     newSong->songPhoto = SongPhoto;
     m_dataList.append(newSong);
 
@@ -96,6 +99,13 @@ void LibraryBackend::setSelected(int indets)
     qDebug()<<"actualizando lista brrr"<<actualIndex<<"cancion: "<<m_selected_songName;
 }
 
+void LibraryBackend::saveNotes()
+{
+    jsonController.writeJsonToFile(m_dataList.at(actualIndex)->songNotes);
+}
+
+
+
 bool LibraryBackend::copiarArchivo(const QString &origen, const QString &destino)
 {
     QFile archivoOrigen(origen);
@@ -110,10 +120,10 @@ bool LibraryBackend::copiarArchivo(const QString &origen, const QString &destino
 
     // Intentamos copiar el archivo
     if (archivoOrigen.copy(destino)) {
-        qDebug() << "Archivo copiado exitosamente de" << origen << "a" << destino;
+        //qDebug() << "Archivo copiado exitosamente de" << origen << "a" << destino;
         return true;
     } else {
-        qDebug() << "Error al copiar el archivo:" << archivoOrigen.errorString();
+        //qDebug() << "Error al copiar el archivo:" << archivoOrigen.errorString();
         return false;
     }
 }
@@ -122,24 +132,24 @@ void LibraryBackend::addsongNotes(QString NoteText, QString Type)
 {
     //Guardado de archivos en local>Copiar archivo
     //NoteText audio = "file:///C:/Users/usuario/Music/cumbion.mp3"
-
+    QString cloned_NoteText;
     if(Type=="audio"){
         QString FolderName=m_selected_songName.split(".")[0];//"(cumbion)"."mp3"
         QString SongName= NoteText.split("/").back();//"cancioncopiada.mp3"
-        //qDebug()<<SongName;
         copiarArchivo(NoteText.remove("file:///"),(DocumentsUrl+"/Vaultones/"+FolderName+"/Notes/"+SongName));
+        cloned_NoteText=(DocumentsUrl+"/Vaultones/"+FolderName+"/Notes/"+SongName);
     }else{
         qDebug()<<"texto";
     }
 
-    //armar el Notes
     Notes* nota=new Notes;
-    nota->note=NoteText;
+    nota->note=cloned_NoteText;//me quede aca 28 10 2024
     nota->type=Type;
-    //aniadir Notes al Qlist
     m_dataList.at(actualIndex)->songNotes.append(nota);
-    //actualizar la UI
+    //fetch Backend - UI
+    //actualizo el principal[index], el noteslist actualmente mostrado de notesclass
     m_notesmodel->updateModel(m_dataList.at(actualIndex)->songNotes);
+
 }
 
 void LibraryBackend::deleteSongNotes(int Index)
@@ -164,13 +174,13 @@ QString LibraryBackend::selected_songName() const
 }
 void LibraryBackend::autoSearch()
 {
-    //autobusca canciones dentro de las carpetas que NO esten en Notas
+    //autobusca canciones dentro de Docs/VaultTones que NO esten en Notas
     //estas siempre van a ser los temas principales.
-    QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    //QString DocumentsUrl=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
     QString SongFolderUrl=(DocumentsUrl+"/Vaultones");
     QDir tracks(SongFolderUrl);
 
-    //colocando filtros a la carpeta
+    //colocando filtros a la carpeta (archivos | que busque recursivamente | dentro de todos los dir)
     tracks.setFilter(QDir::Files | QDir::NoDotAndDotDot | QDir::AllDirs);
     QStringList namefilters;
     namefilters<<"*.mp3";// << es lo mismo que .append()
@@ -192,4 +202,20 @@ void LibraryBackend::autoSearch()
         }
     }
 
+}
+
+void LibraryBackend::notes_autoSearch()
+{
+    QString SongFolderUrl=(DocumentsUrl+"/Vaultones");
+    QDir tracks(SongFolderUrl);
+    tracks.setFilter(QDir::Files | QDir::NoDotAndDotDot | QDir::AllDirs);
+    QStringList namefilters;
+    namefilters<<"*.mp3";// << es lo mismo que .append()
+    tracks.setNameFilters(namefilters);
+
+}
+bool LibraryBackend::notes_setData(int index, const QVariant &value, int role)
+{
+    QModelIndex modelIndex = m_notesmodel->index(index);
+    return m_notesmodel->setData(modelIndex, value, role);
 }

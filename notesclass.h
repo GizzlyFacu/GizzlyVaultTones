@@ -27,12 +27,12 @@ public:
         TypeRole
     };
     void addNotes(QString Type,QString Name );
-
     void updateModel(QList<Notes*> List);
+    virtual bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+
+
 private:
     QList<Notes*> m_noteslist;
-
-
 };
 
 #endif // NOTESCLASS_H

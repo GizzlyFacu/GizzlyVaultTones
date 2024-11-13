@@ -1,13 +1,15 @@
 #include "notesclass.h"
-
+#include <QDebug>
 notesclass::notesclass(QObject *parent)
     : QAbstractListModel{parent}
 {
+    /*
     addNotes("text","sample text...");
     addNotes("audio","file:///C:/Users/usuario/Music/daypractice1.mp3");
     addNotes("audio","file:///C:/Users/usuario/Music/night1edison.mp3");
     addNotes("text","sample text 2...");
     addNotes("audio","file:///C:/Users/usuario/Music/night1.mp3");
+*/
 }
 
 int notesclass::rowCount(const QModelIndex &parent) const
@@ -57,5 +59,22 @@ void notesclass::updateModel(QList<Notes*> List)
     m_noteslist=List;
     endResetModel();
 }
+
+bool notesclass::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    if (!index.isValid() || index.row() >= m_noteslist.size())return false;
+
+
+    Notes* &item = m_noteslist[index.row()];
+
+    if (role == NoteRole) {
+        item->note = value.toString();
+        //qDebug()<<"m_noteslist["<<index.row()<<"]"<<" Texto: "<<item->note;
+        emit dataChanged(index, index, {role});
+        return true;
+    }
+    return false;
+}
+
 
 
