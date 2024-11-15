@@ -3,7 +3,7 @@ import com.library
 import QtQuick.Controls.Basic
 Item {
     id:root
-    property string text: "texto"
+    property string text: model.textnote
     property int widthX:100
     height: baseText.contentHeight+10
     width: widthX

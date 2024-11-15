@@ -11,6 +11,7 @@ LibraryBackend::LibraryBackend(QObject *parent)
     //addSongs("cumbion.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/cumbion.mp3"),QUrl::fromLocalFile("C:/Users/usuario/Pictures/yo.png"));
     //addSongs("InitGang.mp3", QUrl::fromLocalFile("C:/Users/usuario/Music/InitGang.mp3"));
     autoSearch();
+    connect(m_notesmodel,&notesclass::dataChanged,this,&LibraryBackend::sayHi);
 }
 
 int LibraryBackend::rowCount(const QModelIndex &parent) const
@@ -132,6 +133,7 @@ void LibraryBackend::addsongNotes(QString NoteText, QString Type)
 {
     //Guardado de archivos en local>Copiar archivo
     //NoteText audio = "file:///C:/Users/usuario/Music/cumbion.mp3"
+
     QString cloned_NoteText;
     if(Type=="audio"){
         QString FolderName=m_selected_songName.split(".")[0];//"(cumbion)"."mp3"
@@ -139,15 +141,19 @@ void LibraryBackend::addsongNotes(QString NoteText, QString Type)
         copiarArchivo(NoteText.remove("file:///"),(DocumentsUrl+"/Vaultones/"+FolderName+"/Notes/"+SongName));
         cloned_NoteText=(DocumentsUrl+"/Vaultones/"+FolderName+"/Notes/"+SongName);
     }else{
-        qDebug()<<"texto";
+        //qDebug()<<"texto";
     }
 
+
+
     Notes* nota=new Notes;
+    //nota->note=NoteText;//me quede aca 28 10 2024
     nota->note=cloned_NoteText;//me quede aca 28 10 2024
     nota->type=Type;
     m_dataList.at(actualIndex)->songNotes.append(nota);
     //fetch Backend - UI
     //actualizo el principal[index], el noteslist actualmente mostrado de notesclass
+
     m_notesmodel->updateModel(m_dataList.at(actualIndex)->songNotes);
 
 }
@@ -213,6 +219,12 @@ void LibraryBackend::notes_autoSearch()
     namefilters<<"*.mp3";// << es lo mismo que .append()
     tracks.setNameFilters(namefilters);
 
+}
+
+void LibraryBackend::sayHi()
+{
+    QList<Notes*> returned_noteslist=m_notesmodel->get_noteslist();
+    m_dataList.at(actualIndex)->songNotes=returned_noteslist;
 }
 bool LibraryBackend::notes_setData(int index, const QVariant &value, int role)
 {

@@ -30,7 +30,7 @@ public:
     void updateModel(QList<Notes*> List);
     virtual bool setData(const QModelIndex &index, const QVariant &value, int role) override;
 
-
+    QList<Notes*> get_noteslist();
 private:
     QList<Notes*> m_noteslist;
 };

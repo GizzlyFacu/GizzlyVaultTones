@@ -5,6 +5,7 @@
 ## What's next?
 - Saving notes: 
     - I think the struct info are not updating at the same time as UI text.
+    - Make that thing that chatgpt told me to do. hhaa lol
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp

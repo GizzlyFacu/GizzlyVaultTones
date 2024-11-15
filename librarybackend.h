@@ -63,6 +63,7 @@ public slots:
 private slots:
     void autoSearch();
     void notes_autoSearch();
+    void sayHi();
 private:
     QList<Data*> m_dataList;
     notesclass *m_notesmodel = new notesclass(this);

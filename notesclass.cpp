@@ -76,5 +76,10 @@ bool notesclass::setData(const QModelIndex &index, const QVariant &value, int ro
     return false;
 }
 
+QList<Notes *> notesclass::get_noteslist()
+{
+    return m_noteslist;
+}
+
 
 
