@@ -5,6 +5,8 @@
         <file>assets/icons/search.svg</file>
         <file>assets/icons/play.svg</file>
         <file>assets/icons/pause.svg</file>
+        <file>assets/icons/volume.svg</file>
+        <file>assets/icons/volumemute.svg</file>
     </qresource>
     <qresource prefix="/"/>
     <qresource prefix="/textplaylist">

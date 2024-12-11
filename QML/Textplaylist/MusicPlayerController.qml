@@ -46,7 +46,49 @@ Item {
         value: LibraryBackends.musicplayer.sliderPosition
         onPressedChanged: LibraryBackends.musicplayer.pausedSlider(slider.value)
     }
+    Rectangle{
+        id:volumeButton
+        width: 40*0.8
+        height: 40*0.8
+        radius:40*0.8
+        color:PaletteMaster.whiteText
+        anchors{
+            verticalCenter: button.verticalCenter
+            left: button.right
+            leftMargin: 10
+        }
+        IconButtonsFinal{
+            property bool playPause:true
+            id:volumeVector
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
 
+            source: "qrc:/resources/assets/icons/volume.svg"
+            color:PaletteMaster.darkGrayUI
+            iconHeight: 24*0.8
+            iconWidth: 24*0.8
+            z:1
+            onClickeds:volumeSlider.opacity =!volumeSlider.opacity
+        }
+        Slider {
+            id:volumeSlider
+            anchors{
+                verticalCenter: parent.verticalCenter
+                left:volumeButton.right
+                leftMargin: 10
+            }
+            handle: Rectangle{opacity:0}
+
+            width: 80
+            height: 10
+            opacity: 0
+            from: 0
+            to: 1
+            value: 1
+            stepSize: 0.1
+            onPressedChanged: LibraryBackends.musicplayer.volumeController(value)
+        }
+    }
     Text{
         id:musicPositionText
         anchors.verticalCenter: slider.verticalCenter

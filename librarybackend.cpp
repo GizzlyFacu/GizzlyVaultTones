@@ -141,7 +141,7 @@ void LibraryBackend::addsongNotes(QString NoteText, QString Type)
         copiarArchivo(NoteText.remove("file:///"),(DocumentsUrl+"/Vaultones/"+FolderName+"/Notes/"+SongName));
         cloned_NoteText=(DocumentsUrl+"/Vaultones/"+FolderName+"/Notes/"+SongName);
     }else{
-        //qDebug()<<"texto";
+        saveNotes();
     }
 
 

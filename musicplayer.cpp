@@ -15,6 +15,7 @@ void MusicPlayer::configSong(QUrl SongUrl)
     m_mediaPlayer.setSource(SongUrl);
     m_mediaPlayer.setAudioOutput(new QAudioOutput(&m_mediaPlayer));//puede ser
 
+
 }
 
 void MusicPlayer::playMusic()
@@ -84,6 +85,12 @@ void MusicPlayer::refreshMusicDuration()
     m_sliderDuration=m_mediaPlayer.duration()/1000;
     //qDebug()<<"New Music Duration: "<< m_sliderDuration;
     emit sliderDurationChanged();
+}
+
+//----------Volume-------------------------------
+void MusicPlayer::volumeController(float value)
+{
+    m_mediaPlayer.audioOutput()->setVolume(value);
 }
 //----------Auto QPROPERTIES----------------------
 bool MusicPlayer::playPause() const

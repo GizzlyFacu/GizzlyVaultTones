@@ -1,11 +1,10 @@
 # Tasks
 ---
+I don't want to work anymore with notes. Just a Music Player.
 ## Where did I Stop
-- Saving notes.
+-VautTones Reamke - Add a volumeButton
 ## What's next?
-- Saving notes: 
-    - I think the struct info are not updating at the same time as UI text.
-    - Make that thing that chatgpt told me to do. hhaa lol
+- Change TextPlaylist for the song Image.
 
 ## First Level: Working on Backend 
 1. Finish Library Backend .cpp
@@ -75,4 +74,8 @@ void clearDataList() {
 2. Completed - Delete audioNotes and Songs.
 3. Completed - Audio-notes inside songfolders. ( save and autosearch )
 4. Text-notes as i dont know how to save that.
-
+5. Save text-notes in the notes folder. (Librarybackend::addsongNotes(QString NoteText, QString Type)).11/12/24 last thing
+## Remake of VaultTones
+I just wanna finish this project.
+1. Completed - Add a volumeButton
+2. Change de TextPlaylist for the Image of the song.

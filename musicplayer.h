@@ -22,6 +22,7 @@ public:
     int sliderDuration() const;
 
 
+
 signals:
     void playPauseChanged();
     void sliderPositionChanged();
@@ -31,6 +32,8 @@ public slots:
     void playMusic();
     void pausedSlider(int Position);
     void configSong(QUrl SongUrl);
+    //volume- controller
+    void volumeController(float value);
 private slots:
     //slider- position
     void connectSlider();
@@ -39,6 +42,7 @@ private slots:
     //slider- duration
     void connectMusicDuration();
     void refreshMusicDuration();
+
 private:
     QMediaPlayer m_mediaPlayer;
     bool m_playPause=true;
